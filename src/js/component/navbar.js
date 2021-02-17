@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import InvestLogo from "../../img/InvestLogo.png";
 
 export const Navbar = () => {
 	return (
@@ -7,7 +8,7 @@ export const Navbar = () => {
 			<div className="container">
 				<div className="navbar-brand is-active">
 					<a className="navbar-item" href="#">
-						<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+						<img src={InvestLogo} width="112" height="28" />
 					</a>
 					<a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
 						<span aria-hidden="true" />
@@ -18,22 +19,22 @@ export const Navbar = () => {
 				<div className="navbar-menu">
 					<div className="navbar-end">
 						<a className="navbar-item" href="#">
-							Features
+							Home
 						</a>
 						<a className="navbar-item" href="#">
-							Enterprise
+							Investments
 						</a>
 						<a className="navbar-item" href="#">
-							Support
+							Forecast
 						</a>
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a className="navbar-link">ICO</a>
+							<a className="navbar-link">Menu</a>
 							<div className="navbar-dropdown">
 								<a className="navbar-item navbar-item-dropdown" href="#">
-									Whitepaper
+									Dashboard
 								</a>
 								<a className="navbar-item navbar-item-dropdown" href="#">
-									Token
+									Profile
 								</a>
 							</div>
 						</div>
@@ -42,7 +43,7 @@ export const Navbar = () => {
 						<div className="navbar-item">
 							<div className="buttons">
 								<a className="button is-light" href="#">
-									Log in
+									<Link to="/login">Log in </Link>
 								</a>
 								<a className="button is-danger" href="#">
 									Sign up

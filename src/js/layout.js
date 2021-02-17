@@ -12,7 +12,7 @@ import { Footer } from "./component/footer";
 import { Header } from "./component/header";
 import { Hero } from "./component/hero";
 import { Howitworks } from "./component/howitworks";
-
+import { LogIn } from "./views/login";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -27,17 +27,18 @@ const Layout = () => {
 					<Hero />
 					<Header />
 					<Howitworks />
-					{/* <Switch>
-						<Route exact path="/">
-							<Home />
+					{/* <Login /> */}
+					<Switch>
+						<Route exact path="/login/:id">
+							<LogIn />
 						</Route>
-						<Route exact path="/single/:theid">
+						{/* <Route exact path="/single/:theid">
 							<Single />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
-						</Route>
-					</Switch> */}
+						</Route> */}
+					</Switch>
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
