@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar is-light pt-3 pb-3">
 			<div className="container">
 				<div className="navbar-brand is-active">
-					<a className="navbar-item" href="https://bulma.io">
+					<a className="navbar-item" href="#">
 						<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
 					</a>
 					<a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
