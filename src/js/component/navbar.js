@@ -26,7 +26,7 @@ export const Navbar = () => {
 						<a className="navbar-item" href="/investments">
 							Investments
 						</a>
-						<a className="navbar-item" href="#">
+						<a className="navbar-item" href="/forecast">
 							Forecast
 						</a>
 						<div className="navbar-item has-dropdown is-hoverable">

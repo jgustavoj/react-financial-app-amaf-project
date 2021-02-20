@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Login } from "./views/login";
 import { Investments } from "./views/investments";
+import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
 //import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -28,6 +29,7 @@ const Layout = () => {
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/investments" component={Investments} />
+						<Route exact path="/forecast" component={Forecast} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
 							<h1>Not found!</h1>
