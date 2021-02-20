@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const LogIn = () => {
+export const Signup = () => {
 	return (
-		<div>
+		<div className="container width-50">
 			<form className="box has-background-white">
-				<h2 className="title has-text-centered has-text-dark">Login</h2>
+				<h2 className="title has-text-centered has-text-dark">Signup</h2>
 				<div className="field">
 					<p className="control">
 						<input type="email" className="input" placeholder="Email" />
