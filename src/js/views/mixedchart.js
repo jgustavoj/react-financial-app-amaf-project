@@ -1,7 +1,7 @@
 import React from "react";
 import ReactFrappeChart from "react-frappe-charts";
 
-export const Investments = () => {
+export const MixedChart = () => {
 	return (
 		<>
 			<section className="section">

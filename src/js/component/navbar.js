@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InvestLogo from "../../img/InvestLogo.png";
+//import InvestLogo from "../../img/fin-circle.png";
+// import InvestLogo from "../../img/fin-invest.png";
 
 export const Navbar = () => {
 	return (
@@ -8,7 +10,7 @@ export const Navbar = () => {
 			<div className="container">
 				<div className="navbar-brand is-active">
 					<a className="navbar-item" href="/">
-						<img src={InvestLogo} width="112" height="28" />
+						<img src={InvestLogo} width="50" height="150" />
 					</a>
 					<a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
 						<span aria-hidden="true" />
@@ -21,7 +23,7 @@ export const Navbar = () => {
 						<a className="navbar-item" href="/">
 							Home
 						</a>
-						<a className="navbar-item" href="#">
+						<a className="navbar-item" href="/investments">
 							Investments
 						</a>
 						<a className="navbar-item" href="#">
@@ -42,7 +44,7 @@ export const Navbar = () => {
 					<div>
 						<div className="navbar-item">
 							<div className="buttons">
-								<a className="button is-light" href="#">
+								<a className="button has-text-dark" href="#">
 									<Link to="/login">Log in</Link>
 								</a>
 								<a className="button is-danger" href="/signup">
