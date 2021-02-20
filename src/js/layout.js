@@ -3,15 +3,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-// import { Demo } from "./views/demo";
-// import { Single } from "./views/single";
+import { LogIn } from "./views/login";
+import { Signup } from "./views/signup";
+import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Header } from "./component/header";
-import { Hero } from "./component/hero";
-import { Howitworks } from "./component/howitworks";
 
 //create your first component
 const Layout = () => {
@@ -20,24 +18,19 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column">
+		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
-					<Hero />
-					<Header />
-					<Howitworks />
-					{/* <Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/login" component={LogIn} />
+						<Route exact path="/signup" component={Signup} />
+						<Route exact path="/single/:theid" component={Single} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
-					</Switch> */}
+					</Switch>
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
