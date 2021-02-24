@@ -39,9 +39,6 @@ export const NavbarLeft = () => {
 							<a>Invitations</a>
 						</li>
 						<li>
-							<a>Cloud Storage Environment Settings</a>
-						</li>
-						<li>
 							<a>Authentication</a>
 						</li>
 					</ul>

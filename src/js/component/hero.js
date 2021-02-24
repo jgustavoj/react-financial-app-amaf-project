@@ -36,16 +36,6 @@ export const Hero = () => (
 											<button className="button is-danger">Sign up</button>
 										</div>
 									</div>
-									<div className="field">
-										<div className="control">
-											<label className="checkbox">
-												<div className="control">
-													<input type="checkbox" required="required" />
-													&nbsp; I agree to <a href="#">terms and conditions</a>.
-												</div>
-											</label>
-										</div>
-									</div>
 								</form>
 							</div>
 						</div>
