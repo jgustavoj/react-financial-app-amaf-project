@@ -39,13 +39,13 @@ export const Footer = () => (
 					</ul>
 				</div>
 				<div className="column">
-					<h6 className="title is-6">About Pied Piper</h6>
+					<h6 className="title is-6">App Links</h6>
 					<ul>
 						<li>
-							<a href="#">Our team</a>
+							<a href="/login">Log in</a>
 						</li>
 						<li>
-							<a href="#">Careers</a>
+							<a href="/signup">Sign up</a>
 						</li>
 						<li>
 							<a href="#">Press</a>

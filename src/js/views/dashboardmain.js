@@ -111,7 +111,6 @@ export const DashboardMain = () => {
 						</div>
 					</div>
 				</section>
-
 				<section className="section">
 					<div className="container">
 						<div className="columns is-multiline">
