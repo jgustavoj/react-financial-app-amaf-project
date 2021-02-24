@@ -7,11 +7,13 @@ import { Login } from "./views/login";
 import { Investments } from "./views/investments";
 import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
+import { Dashboard } from "./views/dashboard";
 //import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
+import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
+
+import injectContext from "./store/appContext";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +32,7 @@ const Layout = () => {
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/investments" component={Investments} />
 						<Route exact path="/forecast" component={Forecast} />
+						<Route exact path="/dashboard" component={Dashboard} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
 							<h1>Not found!</h1>

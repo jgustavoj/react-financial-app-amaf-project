@@ -32,7 +32,7 @@ export const Navbar = () => {
 						<div className="navbar-item has-dropdown is-hoverable">
 							<a className="navbar-link">Menu</a>
 							<div className="navbar-dropdown">
-								<a className="navbar-item navbar-item-dropdown" href="#">
+								<a className="navbar-item navbar-item-dropdown" href="/dashboard">
 									Dashboard
 								</a>
 								<a className="navbar-item navbar-item-dropdown" href="#">
