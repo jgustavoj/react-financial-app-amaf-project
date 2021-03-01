@@ -7,6 +7,7 @@ import { Login } from "./views/login";
 import { Investments } from "./views/investments";
 import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
+import { Profile } from "./views/profile";
 //import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -30,6 +31,7 @@ const Layout = () => {
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/investments" component={Investments} />
 						<Route exact path="/forecast" component={Forecast} />
+						<Route exact path="/profile" component={Profile} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
 							<h1>Not found!</h1>
