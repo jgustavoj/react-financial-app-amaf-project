@@ -14,6 +14,7 @@ import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
 
 import injectContext from "./store/appContext";
+import { Dashboard } from "./views/dashboard";
 
 //create your first component
 const Layout = () => {
@@ -33,6 +34,7 @@ const Layout = () => {
 						<Route exact path="/investments" component={Investments} />
 						<Route exact path="/forecast" component={Forecast} />
 						<Route exact path="/profile" component={Profile} />
+						<Route exact path="/dashboard" component={Dashboard} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
 							<h1>Not found!</h1>
