@@ -1,18 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
+	const base_url = "https://3000-yellow-falcon-5npkauxw.ws-us03.gitpod.io/";
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			register: {
+				full_name: "",
+				email: "",
+				password: ""
+			}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
