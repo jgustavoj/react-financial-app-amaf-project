@@ -7,9 +7,11 @@ export const Profile = () => {
 		<div className="box has-text-centered has-background-white">
 			<div>
 				<div className="flex-shrink-0">
-					<a href="#" className="image is-64x64 m-auto">
-						<img alt="profil" src={Charlie} className="is-rounded" />
-					</a>
+					<div className="profile-image">
+						<a href="#" className="image is-64x64 m-auto">
+							<img alt="profil" src={Charlie} className="is-rounded" />
+						</a>
+					</div>
 				</div>
 				<div className="mb-4">
 					<p className="has-text-grey-dark">Charlie</p>
