@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Charlie from "../../img/charlie.jpg";
 
 export const Profile = () => {
 	return (
@@ -7,7 +8,7 @@ export const Profile = () => {
 			<div>
 				<div className="flex-shrink-0">
 					<a href="#" className="image is-64x64 m-auto">
-						<img alt="profil" src="/images/person/1.jpg" className="is-rounded" />
+						<img alt="profil" src={Charlie} className="is-rounded" />
 					</a>
 				</div>
 				<div className="mb-4">
