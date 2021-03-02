@@ -9,10 +9,11 @@ import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
 import { Profile } from "./views/profile";
 //import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
+import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
+
+import injectContext from "./store/appContext";
 
 //create your first component
 const Layout = () => {

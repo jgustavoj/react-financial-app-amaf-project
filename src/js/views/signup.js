@@ -31,14 +31,6 @@ export const Signup = () => {
 									</div>
 								</div>
 								<div className="field">
-									<label className="checkbox">
-										<div className="control">
-											<input type="checkbox" />
-											&nbsp; Subscribe to the newsletter
-										</div>
-									</label>
-								</div>
-								<div className="field">
 									<div className="control">
 										<button className="button is-danger is-fullwidth">Sign up!</button>
 									</div>
