@@ -50,6 +50,60 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
+			login: (username, password) => {
+				return fetch(base_url + "/login", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						username: username,
+						password: password
+					})
+				})
+					.then(resp => {
+						if (!resp.ok) {
+							throw new Error(resp.statusText);
+						}
+						return resp.json();
+					})
+					.then(data => {
+						let store = getStore();
+						store.user = {
+							loggedIn: true,
+							username: username,
+							token: data.jwt,
+							info: data.user
+						};
+						setStore(store);
+						sessionStorage.setItem("currentUser", JSON.stringify(data));
+						sessionStorage.setItem("loggedIn", true);
+						return true;
+					})
+					.catch(err => {
+						console.error(err);
+						return false;
+					});
+			},
+			isLoggedIn: () => {
+				const store = getStore();
+				if (sessionStorage.getItem("currentUser")) {
+					store.user = {
+						loggedIn: sessionStorage.getItem("loggedIn")
+					};
+					setStore(store);
+				}
+			},
+			logout: () => {
+				setStore({
+					user: {
+						loggedIn: false,
+						username: "",
+						token: null,
+						info: null
+					}
+				});
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
