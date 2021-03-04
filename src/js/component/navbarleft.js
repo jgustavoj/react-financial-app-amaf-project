@@ -16,12 +16,15 @@ export const NavbarLeft = () => {
 							<a>Customers</a>
 						</li>
 					</ul>
-					<p className="menu-label">Administration</p>
+					<p className="menu-label">Stock Market</p>
 					<ul className="menu-list">
 						<li>
-							<a>Team Settings</a>
+							<a>Most Gainer</a>
 						</li>
 						<li>
+							<a>Most Loser</a>
+						</li>
+						{/* <li>
 							<a>Manage Your Team</a>
 							<ul>
 								<li>
@@ -34,7 +37,7 @@ export const NavbarLeft = () => {
 									<a>Add a member</a>
 								</li>
 							</ul>
-						</li>
+						</li> */}
 						<li>
 							<a>Invitations</a>
 						</li>
