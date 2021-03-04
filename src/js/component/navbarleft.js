@@ -10,7 +10,7 @@ export const NavbarLeft = () => {
 					<p className="menu-label">General</p>
 					<ul className="menu-list">
 						<li>
-							<a>Dashboard</a>
+							<a className="is-active">Dashboard</a>
 						</li>
 						<li>
 							<a>Customers</a>
@@ -22,7 +22,7 @@ export const NavbarLeft = () => {
 							<a>Team Settings</a>
 						</li>
 						<li>
-							<a className="is-active">Manage Your Team</a>
+							<a>Manage Your Team</a>
 							<ul>
 								<li>
 									<a>Members</a>
