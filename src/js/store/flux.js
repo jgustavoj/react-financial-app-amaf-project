@@ -1,5 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	const base_url = "https://3000-yellow-falcon-5npkauxw.ws-us03.gitpod.io/";
+	const fmp_url = "https://financialmodelingprep.com/";
 	return {
 		store: {
 			register: {
@@ -17,6 +18,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			gainerStocks: () => {
+				return fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						if (!resp.ok) {
+							throw new Error(resp.statusText);
+						}
+						return resp.json();
+					})
+					.then(data => {
+						let store = getStore();
+						// store.user = {
+						// 	token: data.jwt,
+						// 	info: data.user
+						// };
+						setStore(store);
+						return true;
+					})
+					.catch(err => {
+						console.error(err);
+						return false;
+					});
 			},
 			signupPage: (full_name, email, password) => {
 				return fetch(base_url + "/signup", {

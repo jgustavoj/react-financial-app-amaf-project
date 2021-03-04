@@ -13,7 +13,7 @@ export const NavbarLeft = () => {
 							<a className="is-active">Dashboard</a>
 						</li>
 						<li>
-							<a>Customers</a>
+							<a>Profile</a>
 						</li>
 					</ul>
 					<p className="menu-label">Stock Market</p>
@@ -39,10 +39,10 @@ export const NavbarLeft = () => {
 							</ul>
 						</li> */}
 						<li>
-							<a>Invitations</a>
+							<a>Most Active</a>
 						</li>
 						<li>
-							<a>Authentication</a>
+							<a>Market Sectors</a>
 						</li>
 					</ul>
 					<p className="menu-label">Transactions</p>
