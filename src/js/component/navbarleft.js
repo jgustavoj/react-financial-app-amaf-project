@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InvestLogo from "../../img/InvestLogo.png";
+import axios from "axios";
+
+// const response = async function getMostActive() {
+// 	try {
+// 		const response = await axios.get(
+// 			"https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=da6240539dc1685ff601c5c2edb3ff29"
+// 		);
+// 		console.log(response);
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
 
 export const NavbarLeft = () => {
 	return (
@@ -19,7 +31,9 @@ export const NavbarLeft = () => {
 					<p className="menu-label">Stock Market</p>
 					<ul className="menu-list">
 						<li>
-							<a>Most Gainer</a>
+							<Link to="/mostgainer">
+								<a>Most Gainer</a>
+							</Link>
 						</li>
 						<li>
 							<a>Most Loser</a>
