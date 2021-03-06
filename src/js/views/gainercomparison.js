@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
+// props.location.state.comparisons[]
 
-export const MostGainer = () => {
+export const GainerComparison = props => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-
+	// add symbol details fetch for each
 	useEffect(() => {
 		fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
 			method: "GET",
@@ -48,17 +49,17 @@ export const MostGainer = () => {
 							<div className="container">
 								<div className="columns is-desktop">
 									<div className="column is-2-desktop">
-										<Link
+										{/* <Link
 											to={{
-												pathname: "/gainercomparison",
+												pathname: "/gainerComparison",
 												state: {
 													comparisons: comparisons
 												}
 											}}>
-											<button type="button" className="button is-warning">
+											<button type="button" className="btn btn-warning">
 												Compare
 											</button>
-										</Link>
+										</Link> */}
 										<table className="table">
 											<thead className="thead-dark">
 												<tr>
