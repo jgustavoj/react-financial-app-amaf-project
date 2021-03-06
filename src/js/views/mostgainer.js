@@ -9,7 +9,7 @@ export const MostGainer = () => {
 	const [comparisons, setComparisons] = useState([]);
 
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + "api/v3/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -27,7 +27,6 @@ export const MostGainer = () => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				console.log(resp);
 				setData(resp.mostGainerStock);
 				//setStore(store);
 				return true;
@@ -94,7 +93,7 @@ export const MostGainer = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<button className="button is-warning is-small fas fa-chart-line" />
+																	<button className="button is-active is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);

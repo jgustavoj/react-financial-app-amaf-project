@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-// rest of your app
-
 const fmp_url = "https://financialmodelingprep.com/";
 
-export const MostActives = () => {
+export const MarketSectors = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/stock/actives?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + "api/v3/sectors-performance?apikey=da6240539dc1685ff601c5c2edb3ff29", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -29,7 +27,7 @@ export const MostActives = () => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				setData(resp.mostActiveStock);
+				setData(resp);
 				//setStore(store);
 				return true;
 			})
@@ -65,11 +63,8 @@ export const MostActives = () => {
 										<thead className="thead-dark is-fullwidth">
 											<tr>
 												<th scope="col" />
-												<th scope="col">Ticker</th>
+												<th scope="col">Sector</th>
 												<th scope="col">Changes</th>
-												<th scope="col">Price</th>
-												<th scope="col">+/- %</th>
-												<th scope="col">Company</th>
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
@@ -89,13 +84,10 @@ export const MostActives = () => {
 																		}
 																	/>
 																</td>
-																<td>{value.ticker}</td>
-																<td>{value.changes}</td>
-																<td>{value.price}</td>
+																<td>{value.sector}</td>
 																<td>{value.changesPercentage}</td>
-																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<button className="button is-warning is-small fas fa-chart-line" />
+																	<button className="button is-active is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);

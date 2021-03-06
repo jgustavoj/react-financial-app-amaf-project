@@ -29,7 +29,6 @@ export const MostLoser = () => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				console.log(resp);
 				setData(resp.mostLoserStock);
 				//setStore(store);
 				return true;

@@ -64,7 +64,9 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
-							<a>Market Sectors</a>
+							<NavLink to="/marketsectors" activeClassName="is-active">
+								Market Sectors
+							</NavLink>
 						</li>
 					</ul>
 					<p className="menu-label">Transactions</p>
