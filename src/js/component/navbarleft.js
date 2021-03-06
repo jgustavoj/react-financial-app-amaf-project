@@ -40,7 +40,9 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
-							<a>Most Loser</a>
+							<NavLink to="/mostloser" activeClassName="is-active">
+								Most Loser
+							</NavLink>
 						</li>
 						{/* <li>
 							<a>Manage Your Team</a>
@@ -57,7 +59,9 @@ export const NavbarLeft = () => {
 							</ul>
 						</li> */}
 						<li>
-							<a>Most Active</a>
+							<NavLink to="/mostactives" activeClassName="is-active">
+								Most Actives
+							</NavLink>
 						</li>
 						<li>
 							<a>Market Sectors</a>

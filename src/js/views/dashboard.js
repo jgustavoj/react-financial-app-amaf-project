@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
 export const Dashboard = () => {
 	return (
 		<>
 			<div className="columns is-multiline">
-				<div className="column is-3-tablet">
+				<div className="column is-2-tablet">
 					<NavbarLeft />
 				</div>
-				<div className="column is-9-tablet">
+				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-5">
 						<section className="section">
 							<div className="container">

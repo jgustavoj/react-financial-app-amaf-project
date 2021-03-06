@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
+// rest of your app
+
 const fmp_url = "https://financialmodelingprep.com/";
 
-export const MostGainer = () => {
+export const MostActives = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + "api/v3/stock/actives?apikey=da6240539dc1685ff601c5c2edb3ff29", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -28,7 +30,7 @@ export const MostGainer = () => {
 				// 	info: data.user
 				// };
 				console.log(resp);
-				setData(resp.mostGainerStock);
+				setData(resp.mostActiveStock);
 				//setStore(store);
 				return true;
 			})

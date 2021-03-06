@@ -8,7 +8,6 @@ import { Investments } from "./views/investments";
 import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
 import { Profile } from "./views/profile";
-//import { Single } from "./views/single";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
@@ -16,6 +15,8 @@ import { Footer } from "./component/footer";
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
 import { MostGainer } from "./views/mostgainer";
+import { MostLoser } from "./views/mostloser";
+import { MostActives } from "./views/mostactives";
 import { GainerComparison } from "./views/gainercomparison";
 
 //create your first component
@@ -38,6 +39,8 @@ const Layout = () => {
 						<Route exact path="/profile" component={Profile} />
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/mostgainer" component={MostGainer} />
+						<Route exact path="/mostloser" component={MostLoser} />
+						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
