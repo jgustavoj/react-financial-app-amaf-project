@@ -9,7 +9,7 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MostLoser = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-    const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = "262c745fe3c5212a43505988b53267ad";
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/stock/losers?apikey=${apikey}`, {
@@ -96,7 +96,13 @@ export const MostLoser = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<button className="button is-info is-small fas fa-chart-line" />
+																	<Link to={`/analysis/${value.ticker}`}>
+																		<button
+																			type="button"
+																			className="button is-info is-small fas fa-chart-line">
+																			+
+																		</button>
+																	</Link>
 																</td>
 															</tr>
 														);

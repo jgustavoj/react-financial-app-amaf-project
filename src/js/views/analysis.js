@@ -5,15 +5,15 @@ const fmp_url = "https://financialmodelingprep.com/";
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
-    const [comparisons, setComparisons] = useState([]);
-    const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
+	const [comparisons, setComparisons] = useState([]);
+	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	// const {
 	// 	match: { params }
 	// } = this.props;
 	const symbol = props.match.params.tickerSymbol;
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/ratios-ttm/${symbol}?apikey=${apikey}`, {
+		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -64,14 +64,14 @@ export const Analysis = props => {
 								<thead className="thead-dark">
 									<tr>
 										<th scope="col">Symbol</th>
-										<th scope="col">Name</th>
 										<th scope="col">Price</th>
-										<th scope="col">Change</th>
-										<th scope="col">PEG Ratio</th>
-										<th scope="col">Payout Ratio</th>
-										<th scope="col">Current Ratio</th>
-										<th scope="col">Quick Ratio</th>
-										<th scope="col">Cash Ratio</th>
+										<th scope="col">Final Div</th>
+										<th scope="col">Exchange</th>
+										<th scope="col">Range</th>
+										<th scope="col">Beta</th>
+										<th scope="col">Changes</th>
+										<th scope="col">Currency</th>
+										<th scope="col">Address</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -80,26 +80,18 @@ export const Analysis = props => {
 												return (
 													<tr key={index}>
 														<td>{symbol}</td>
+														<td>{value.price === null ? "N/A" : value.price}</td>
+														<td>{value.lastDiv === null ? "N/A" : value.lastDiv}</td>
 														<td>
-															{value.dividendYielTTM === null
+															{value.exchangeShortName === null
 																? "N/A"
-																: value.dividendYielTTM.toFixed(2)}
+																: value.exchangeShortName}
 														</td>
-														<td>
-															{value.dividendYielPercentageTTM === null
-																? "N/A"
-																: value.dividendYielPercentageTTM.toFixed(2)}
-														</td>
-														<td>
-															{value.peRatioTTM === null
-																? "N/A"
-																: value.peRatioTTM.toFixed(2)}
-														</td>
-														<td>{value.pegRatioTTM}</td>
-														<td>{value.payoutRatioTTM}</td>
-														<td>{value.currentRatioTTM.toFixed(2)}</td>
-														<td>{value.quickRatioTTM.toFixed(2)}</td>
-														<td>{value.cashRatioTTM.toFixed(2)}</td>
+														<td>{value.range}</td>
+														<td>{value.beta}</td>
+														<td>{value.changes}</td>
+														<td>{value.currency}</td>
+														<td>{value.address}</td>
 													</tr>
 												);
 										  })
