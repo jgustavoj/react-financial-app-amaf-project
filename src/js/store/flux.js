@@ -1,8 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	const base_url = "https://3000-yellow-falcon-5npkauxw.ws-us03.gitpod.io/";
-	const fmp_url = "https://financialmodelingprep.com/";
 	return {
 		store: {
+            amaf_url: "",
+            hector_url: "",
+            camilla_url: "",
+            base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
+            fmp_url: "https://financialmodelingprep.com/",
+
 			register: {
 				full_name: "",
 				email: "",
@@ -47,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			signupPage: (full_name, email, password) => {
-				return fetch(base_url + "/signup", {
+				return fetch(getStore().base_url + "/signup", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
