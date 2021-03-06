@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-export const Dashboard = () => {
+export const MostGainer = () => {
 	return (
 		<>
 			<div className="columns is-multiline">
@@ -217,100 +217,6 @@ export const Dashboard = () => {
 												value="75"
 												max="100"
 											/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<section className="section">
-							<div className="container">
-								<div className="columns is-multiline">
-									<div className="column is-6-tablet is-3-desktop">
-										<div className="card">
-											<div className="card-header">
-												<h3 className="card-header-title is-inline">
-													<span>Income</span>
-													<span className="tag is-success is-pulled-right">Monthly</span>
-												</h3>
-											</div>
-											<div className="card-content">
-												<h3 className="title">108,200</h3>
-												<p>Total income</p>
-												<p className="mt-2">
-													<img
-														src="https://bootstrapshuffle.com/placeholder/icons/level-up.svg"
-														alt=""
-														width="24"
-													/>
-													<span className="ml-2">82%</span>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div className="column is-6-tablet is-3-desktop">
-										<div className="card">
-											<div className="card-header">
-												<h3 className="card-header-title is-inline">
-													<span>Orders</span>
-													<span className="tag is-success is-pulled-right">Monthly</span>
-												</h3>
-											</div>
-											<div className="card-content">
-												<h3 className="title">128,430</h3>
-												<p>New orders</p>
-												<p className="mt-2">
-													<img
-														src="https://bootstrapshuffle.com/placeholder/icons/level-up.svg"
-														alt=""
-														width="24"
-													/>
-													<span className="ml-2">32%</span>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div className="column is-6-tablet is-3-desktop">
-										<div className="card">
-											<div className="card-header">
-												<h3 className="card-header-title is-inline">
-													<span>Visits</span>
-													<span className="tag is-success is-pulled-right">Today</span>
-												</h3>
-											</div>
-											<div className="card-content">
-												<h3 className="title">81,248</h3>
-												<p>New visits</p>
-												<p className="mt-2">
-													<img
-														src="https://bootstrapshuffle.com/placeholder/icons/level-up.svg"
-														alt=""
-														width="24"
-													/>
-													<span className="ml-2">24%</span>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div className="column is-6-tablet is-3-desktop">
-										<div className="card">
-											<div className="card-header">
-												<h3 className="card-header-title is-inline">
-													<span>User activity</span>
-													<span className="tag is-danger is-pulled-right">Today</span>
-												</h3>
-											</div>
-											<div className="card-content">
-												<h3 className="title">2,341</h3>
-												<p>Used app more than once</p>
-												<p className="mt-2">
-													<img
-														src="https://bootstrapshuffle.com/placeholder/icons/level-down.svg"
-														alt=""
-														width="24"
-													/>
-													<span className="ml-2">42%</span>
-												</p>
-											</div>
 										</div>
 									</div>
 								</div>

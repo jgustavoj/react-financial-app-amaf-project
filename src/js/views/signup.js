@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export const Signup = () => {
+    const {store, actions} = useContext(Context);
+    const {full_name, setFull_name} = useState("");
+
 	return (
+        
 		<>
 			<section className="section">
 				<div className="container">
@@ -27,12 +33,7 @@ export const Signup = () => {
 								</div>
 								<div className="field">
 									<div className="control">
-										<input className="input" type="password" placeholder="Repeat password" />
-									</div>
-								</div>
-								<div className="field">
-									<div className="control">
-										<button className="button is-danger is-fullwidth">Sign up!</button>
+										<button className="button is-danger is-fullwidth" onClick={()=>actions.signupPage()}>Sign up!</button>
 									</div>
 								</div>
 							</form>
