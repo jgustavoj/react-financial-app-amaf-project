@@ -5,14 +5,15 @@ const fmp_url = "https://financialmodelingprep.com/";
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
-	const [comparisons, setComparisons] = useState([]);
+    const [comparisons, setComparisons] = useState([]);
+    const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	// const {
 	// 	match: { params }
 	// } = this.props;
 	const symbol = props.match.params.tickerSymbol;
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/ratios-ttm/${symbol}?apikey=da6240539dc1685ff601c5c2edb3ff29`, {
+		fetch(fmp_url + `api/v3/ratios-ttm/${symbol}?apikey=${apikey}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"

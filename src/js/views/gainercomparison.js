@@ -5,11 +5,12 @@ const fmp_url = "https://financialmodelingprep.com/";
 
 export const GainerComparison = props => {
 	const [quotedata, setQuoteData] = useState([]);
-	const symbol = props.location.state.comparisons[0];
+    const symbol = props.location.state.comparisons[0];
+    const apikey = "262c745fe3c5212a43505988b53267ad";
 	const [comparisons, setComparisons] = useState([]);
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=da6240539dc1685ff601c5c2edb3ff29`, {
+		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=${apikey}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"

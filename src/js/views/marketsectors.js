@@ -6,10 +6,11 @@ const fmp_url = "https://financialmodelingprep.com/";
 
 export const MarketSectors = () => {
 	const [data, setData] = useState([]);
-	const [comparisons, setComparisons] = useState([]);
+    const [comparisons, setComparisons] = useState([]);
+    const apikey = "262c745fe3c5212a43505988b53267ad";
 
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/sectors-performance?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + `api/v3/sectors-performance?apikey=${apikey}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
