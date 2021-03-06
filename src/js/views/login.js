@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -18,12 +18,24 @@ export const Login = () => {
 							<form>
 								<div className="field">
 									<div className="control">
-										<input className="input" type="email" placeholder="Email" />
+										<input
+											className="input"
+											type="email"
+											placeholder="Email"
+											value={email}
+											onChange={e => setEmail(e.target.value)}
+										/>
 									</div>
 								</div>
 								<div className="field">
 									<div className="control">
-										<input className="input" type="password" placeholder="Password" />
+										<input
+											className="input"
+											type="password"
+											placeholder="Password"
+											value={password}
+											onChange={e => setPassword(e.target.value)}
+										/>
 									</div>
 								</div>
 								<div className="field">
