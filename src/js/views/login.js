@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Login = () => {
+    const {store, actions} = useContext(Context);
+    const {full_name, setFull_name} = useState("");
 	return (
 		<>
 			<section className="section">
