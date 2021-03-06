@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import InvestLogo from "../../img/InvestLogo.png";
 //import InvestLogo from "../../img/fin-circle.png";
 // import InvestLogo from "../../img/fin-invest.png";
@@ -32,9 +32,9 @@ export const Navbar = () => {
 						<div className="navbar-item has-dropdown is-hoverable">
 							<a className="navbar-link">Menu</a>
 							<div className="navbar-dropdown">
-								<Link to="/dashboard">
-									<a className="navbar-item navbar-item-dropdown">Dashboard</a>
-								</Link>
+								<a className="navbar-item navbar-item-dropdown" href="/dashboard">
+									Dashboard
+								</a>
 								<a className="navbar-item navbar-item-dropdown" href="/profile">
 									Profile
 								</a>

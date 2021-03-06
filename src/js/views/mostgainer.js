@@ -43,7 +43,7 @@ export const MostGainer = () => {
 					<NavbarLeft />
 				</div>
 				<div className="column is-9-tablet">
-					<div className="container is-fluid pr-5">
+					<div className="container is-fluid pr-7">
 						<section className="section">
 							<Link
 								to={{
@@ -57,7 +57,7 @@ export const MostGainer = () => {
 								</button>
 							</Link>
 							<br />
-							<div className="container pt-5">
+							<div className="container pt-6 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
 										<thead className="thead-dark is-fullwidth">

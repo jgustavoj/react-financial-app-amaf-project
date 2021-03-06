@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
-// props.location.state.comparisons[]
 
 export const GainerComparison = props => {
-	const [data, setData] = useState([]);
+	const [quotedata, setQuoteData] = useState([]);
+	const symbol = props.location.state.comparisons[0];
 	const [comparisons, setComparisons] = useState([]);
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/financial-growth/AAPL?limit=20&apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + `api/v3/financial-growth/${symbol}?limit=20&apikey=da6240539dc1685ff601c5c2edb3ff29`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -27,8 +27,7 @@ export const GainerComparison = props => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				console.log(resp);
-				setData(resp.mostGainerStock);
+				setQuoteData(resp);
 				//setStore(store);
 				return true;
 			})
@@ -60,7 +59,7 @@ export const GainerComparison = props => {
 							<table className="table is-fullwidth">
 								<thead className="thead-dark">
 									<tr>
-										<th scope="col" />
+										<th scope="col">Symbol</th>
 										<th scope="col">Ticker</th>
 										<th scope="col">Changes</th>
 										<th scope="col">Price</th>
@@ -69,21 +68,13 @@ export const GainerComparison = props => {
 									</tr>
 								</thead>
 								<tbody>
-									{data
-										? data.map((value, index) => {
+									{quotedata
+										? quotedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>
-															<input
-																type="checkbox"
-																aria-label=""
-																onClick={() =>
-																	setComparisons(comparisons.concat(value.ticker))
-																}
-															/>
-														</td>
-														<th scope="row">{value.ticker}</th>
-														<td>{value.changes}</td>
+														<td>{value.symbol}</td>
+														<td>{value.revenueGrowth}</td>
+														<td>{value.grossProfitGrowth}</td>
 														<td>{value.price}</td>
 														<td>{value.changesPercentage}</td>
 														<td>{value.companyName}</td>
