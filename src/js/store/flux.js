@@ -1,30 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
-<<<<<<< HEAD
-	const base_url = "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/";
 	return {
 		store: {
-			user: {
-				loggedIn: false,
-				username: "",
-				token: null,
-				info: null
-			},
-			alert: {
-				visible: false,
-				message: "",
-				type: ""
-			},
-			subscribed: false,
-=======
-	return {
-		store: {
-            amaf_url: "",
-            hector_url: "",
-            camilla_url: "",
-            base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
-            fmp_url: "https://financialmodelingprep.com/",
+			amaf_url: "",
+			hector_url: "",
+			camilla_url: "",
+			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
+			fmp_url: "https://financialmodelingprep.com/",
 
->>>>>>> 8e8151a2609fb5fb3e9c9d8695bf1780fd96dc07
 			register: {
 				full_name: "",
 				email: "",
