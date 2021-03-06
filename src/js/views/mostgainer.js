@@ -45,59 +45,58 @@ export const MostGainer = () => {
 				<div className="column is-9-tablet">
 					<div className="container is-fluid pr-5">
 						<section className="section">
-							<div className="container">
+							<Link
+								to={{
+									pathname: "/gainercomparison",
+									state: {
+										comparisons: comparisons
+									}
+								}}>
+								<button type="button" className="button is-warning">
+									Compare
+								</button>
+							</Link>
+							<br />
+							<div className="container pt-5">
 								<div className="columns is-desktop">
-									<div className="column is-2-desktop">
-										<Link
-											to={{
-												pathname: "/gainercomparison",
-												state: {
-													comparisons: comparisons
-												}
-											}}>
-											<button type="button" className="button is-warning">
-												Compare
-											</button>
-										</Link>
-										<table className="table">
-											<thead className="thead-dark">
-												<tr>
-													<th scope="col" />
-													<th scope="col">Ticker</th>
-													<th scope="col">Changes</th>
-													<th scope="col">Price</th>
-													<th scope="col">Changes %</th>
-													<th scope="col">Company</th>
-												</tr>
-											</thead>
-											<tbody>
-												{data
-													? data.map((value, index) => {
-															return (
-																<tr key={index}>
-																	<td>
-																		<input
-																			type="checkbox"
-																			aria-label=""
-																			onClick={() =>
-																				setComparisons(
-																					comparisons.concat(value.ticker)
-																				)
-																			}
-																		/>
-																	</td>
-																	<th scope="row">{value.ticker}</th>
-																	<td>{value.changes}</td>
-																	<td>{value.price}</td>
-																	<td>{value.changesPercentage}</td>
-																	<td>{value.companyName}</td>
-																</tr>
-															);
-													  })
-													: "Loading..."}
-											</tbody>
-										</table>
-									</div>
+									<table className="table is-fullwidth">
+										<thead className="thead-dark is-fullwidth">
+											<tr>
+												<th scope="col" />
+												<th scope="col">Ticker</th>
+												<th scope="col">Changes</th>
+												<th scope="col">Price</th>
+												<th scope="col">%</th>
+												<th scope="col">Company</th>
+											</tr>
+										</thead>
+										<tbody>
+											{data
+												? data.map((value, index) => {
+														return (
+															<tr key={index}>
+																<td>
+																	<input
+																		type="checkbox"
+																		aria-label=""
+																		onClick={() =>
+																			setComparisons(
+																				comparisons.concat(value.ticker)
+																			)
+																		}
+																	/>
+																</td>
+																<th scope="row">{value.ticker}</th>
+																<td>{value.changes}</td>
+																<td>{value.price}</td>
+																<td>{value.changesPercentage}</td>
+																<td>{value.companyName}</td>
+															</tr>
+														);
+												  })
+												: "Loading..."}
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</section>

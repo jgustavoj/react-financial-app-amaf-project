@@ -6,7 +6,7 @@ export const Footer = () => (
 			<div className="columns is-desktop">
 				<div className="column is-5">
 					<h2 className="title is-5">
-						<a href="#">Pied Piper</a>
+						<a href="#">Investico</a>
 					</h2>
 					<p className="block">A financial application</p>
 					<div className="buttons">
@@ -59,13 +59,13 @@ export const Footer = () => (
 					<h6 className="title is-6">Contact</h6>
 					<ul>
 						<li>
-							<a href="#">pay-the-piper@piedpiper.com</a>
+							<a href="#">support@investico.com</a>
 						</li>
 						<li>
-							<a href="#">555-05-555</a>
+							<a href="#">800-234-5678</a>
 						</li>
 						<li>
-							<a href="#">Pied Piper HQ - 59 Silicon Av.</a>
+							<a href="#">Investico HQ - 59 Collins Av.</a>
 						</li>
 					</ul>
 				</div>
@@ -76,7 +76,7 @@ export const Footer = () => (
 					<a href="#">Terms and conditions</a>
 				</div>
 				<div className="column has-text-right-tablet">
-					<p className="subtitle is-6">&copy; 2020 Pied Piper. All right reserved.</p>
+					<p className="subtitle is-6">&copy; 2021 Investico. All right reserved.</p>
 				</div>
 			</div>
 		</div>
