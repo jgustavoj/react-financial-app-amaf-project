@@ -39,10 +39,10 @@ export const GainerComparison = props => {
 	return (
 		<>
 			<div className="columns is-multiline">
-				<div className="column is-3-tablet">
+				<div className="column is-2-tablet">
 					<NavbarLeft />
 				</div>
-				<div className="column is-9-tablet">
+				<div className="column is-10-tablet">
 					<section className="section">
 						<div className="container">
 							{/* <Link

@@ -17,6 +17,7 @@ import { Dashboard } from "./views/dashboard";
 import { MostGainer } from "./views/mostgainer";
 import { MostLoser } from "./views/mostloser";
 import { MostActives } from "./views/mostactives";
+import { Analysis } from "./views/analysis";
 import { MarketSectors } from "./views/marketsectors";
 import { GainerComparison } from "./views/gainercomparison";
 
@@ -43,8 +44,10 @@ const Layout = () => {
 						<Route exact path="/mostloser" component={MostLoser} />
 						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
+						<Route exact path="/analysis" component={Analysis} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
+						<Route path="/analysis/:tickerSymbol" component={Analysis} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

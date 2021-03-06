@@ -94,13 +94,7 @@ export const MostGainer = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<Link
-																		to={{
-																			pathname: "/analysis",
-																			state: {
-																				analyze: comparisons
-																			}
-																		}}>
+																	<Link to={`/analysis/${value.ticker}`}>
 																		<button
 																			type="button"
 																			className="button is-info is-small fas fa-chart-line">

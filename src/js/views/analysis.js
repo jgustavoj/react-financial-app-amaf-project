@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const Analysis = props => {
-	const [quotedata, setQuoteData] = useState([]);
-	const symbol = props.location.state.comparisons[0];
+	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
+	// const {
+	// 	match: { params }
+	// } = this.props;
+	const symbol = props.match.params.tickerSymbol;
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=da6240539dc1685ff601c5c2edb3ff29`, {
+		fetch(fmp_url + `api/v3/ratios-ttm/${symbol}?apikey=da6240539dc1685ff601c5c2edb3ff29`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -27,7 +30,7 @@ export const Analysis = props => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				setQuoteData(resp);
+				setAnalyzeData(resp);
 				//setStore(store);
 				return true;
 			})
@@ -39,10 +42,10 @@ export const Analysis = props => {
 	return (
 		<>
 			<div className="columns is-multiline">
-				<div className="column is-3-tablet">
+				<div className="column is-2-tablet">
 					<NavbarLeft />
 				</div>
-				<div className="column is-9-tablet">
+				<div className="column is-10-tablet">
 					<section className="section">
 						<div className="container">
 							{/* <Link
@@ -63,27 +66,39 @@ export const Analysis = props => {
 										<th scope="col">Name</th>
 										<th scope="col">Price</th>
 										<th scope="col">Change</th>
-										<th scope="col">Day Low</th>
-										<th scope="col">Day High</th>
-										<th scope="col">Year Low</th>
-										<th scope="col">Year High</th>
-										<th scope="col">Avg 50</th>
+										<th scope="col">PEG Ratio</th>
+										<th scope="col">Payout Ratio</th>
+										<th scope="col">Current Ratio</th>
+										<th scope="col">Quick Ratio</th>
+										<th scope="col">Cash Ratio</th>
 									</tr>
 								</thead>
 								<tbody>
-									{quotedata
-										? quotedata.map((value, index) => {
+									{analyzedata
+										? analyzedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>{value.symbol}</td>
-														<td>{value.name}</td>
-														<td>{value.price}</td>
-														<td>{value.changesPercentage}%</td>
-														<td>{value.dayLow}</td>
-														<td>{value.dayHigh}</td>
-														<td>{value.yearLow}</td>
-														<td>{value.yearHigh}</td>
-														<td>{value.priceAvg50.toFixed(2)}</td>
+														<td>{symbol}</td>
+														<td>
+															{value.dividendYielTTM === null
+																? "N/A"
+																: value.dividendYielTTM.toFixed(2)}
+														</td>
+														<td>
+															{value.dividendYielPercentageTTM === null
+																? "N/A"
+																: value.dividendYielPercentageTTM.toFixed(2)}
+														</td>
+														<td>
+															{value.peRatioTTM === null
+																? "N/A"
+																: value.peRatioTTM.toFixed(2)}
+														</td>
+														<td>{value.pegRatioTTM}</td>
+														<td>{value.payoutRatioTTM}</td>
+														<td>{value.currentRatioTTM.toFixed(2)}</td>
+														<td>{value.quickRatioTTM.toFixed(2)}</td>
+														<td>{value.cashRatioTTM.toFixed(2)}</td>
 													</tr>
 												);
 										  })
