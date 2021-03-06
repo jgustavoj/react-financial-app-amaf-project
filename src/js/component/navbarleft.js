@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import InvestLogo from "../../img/InvestLogo.png";
 import axios from "axios";
 
@@ -22,7 +22,9 @@ export const NavbarLeft = () => {
 					<p className="menu-label">General</p>
 					<ul className="menu-list">
 						<li>
-							<a className="is-active">Dashboard</a>
+							<Link to="/dashboard" activeClassName="is-active">
+								Dashboard
+							</Link>
 						</li>
 						<li>
 							<a>Profile</a>
@@ -31,8 +33,8 @@ export const NavbarLeft = () => {
 					<p className="menu-label">Stock Market</p>
 					<ul className="menu-list">
 						<li>
-							<Link to="/mostgainer">
-								<a>Most Gainer</a>
+							<Link to="/mostgainer" activeClassName="is-active">
+								Most Gainer
 							</Link>
 						</li>
 						<li>
