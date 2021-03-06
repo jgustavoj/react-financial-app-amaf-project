@@ -80,18 +80,18 @@ export const Analysis = props => {
 												return (
 													<tr key={index}>
 														<td>{symbol}</td>
-														<td>{value.price === null ? "N/A" : value.price}</td>
-														<td>{value.lastDiv === null ? "N/A" : value.lastDiv}</td>
+														<td>${value.price === null ? "N/A" : value.price}</td>
+														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
-															{value.exchangeShortName === null
+															{value.exchangeShortName === ""
 																? "N/A"
 																: value.exchangeShortName}
 														</td>
-														<td>{value.range}</td>
-														<td>{value.beta}</td>
-														<td>{value.changes}</td>
-														<td>{value.currency}</td>
-														<td>{value.address}</td>
+														<td>{value.range === null ? "N/A" : value.range}</td>
+														<td>{value.beta === null ? "N/A" : value.beta}</td>
+														<td>{value.changes === null ? "N/A" : value.changes}</td>
+														<td>{value.currency === null ? "N/A" : value.currency}</td>
+														<td>{value.address === "" ? "N/A" : value.address}</td>
 													</tr>
 												);
 										  })
