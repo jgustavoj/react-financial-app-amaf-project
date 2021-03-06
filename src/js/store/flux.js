@@ -1,11 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-            amaf_url: "",
-            hector_url: "",
-            camilla_url: "",
-            base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
-            fmp_url: "https://financialmodelingprep.com/",
+			amaf_url: "",
+			hector_url: "",
+			camilla_url: "",
+			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
+			fmp_url: "https://financialmodelingprep.com/",
 
 			register: {
 				full_name: "",

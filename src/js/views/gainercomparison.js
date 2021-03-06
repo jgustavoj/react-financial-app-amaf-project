@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 
-export const MostGainer = () => {
+export const GainerComparison = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 
@@ -50,7 +50,7 @@ export const MostGainer = () => {
 									<div className="column is-2-desktop">
 										<Link
 											to={{
-												pathname: "/gainercomparison",
+												pathname: "/gainerComparison",
 												state: {
 													comparisons: comparisons
 												}

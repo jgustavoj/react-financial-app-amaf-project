@@ -16,6 +16,7 @@ import { Footer } from "./component/footer";
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
 import { MostGainer } from "./views/mostgainer";
+import { GainerComparison } from "./views/gainercomparison";
 
 //create your first component
 const Layout = () => {
@@ -37,6 +38,7 @@ const Layout = () => {
 						<Route exact path="/profile" component={Profile} />
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/mostgainer" component={MostGainer} />
+						<Route exact path="/gainercomparison" component={GainerComparison} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route>
 							<h1>Not found!</h1>

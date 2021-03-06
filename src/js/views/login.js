@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Login = () => {
-    const {store, actions} = useContext(Context);
-    const {full_name, setFull_name} = useState("");
+	const { store, actions } = useContext(Context);
+	const { full_name, setFull_name } = useState("");
 	return (
 		<>
 			<section className="section">
@@ -24,7 +24,9 @@ export const Login = () => {
 									</div>
 								</div>
 								<div className="field">
-									<button className="button is-danger is-fullwidth" onClick={()=>actions.login()}>Sign in!</button>
+									<button className="button is-danger is-fullwidth" onClick={() => actions.login()}>
+										Sign in!
+									</button>
 								</div>
 							</form>
 						</div>
