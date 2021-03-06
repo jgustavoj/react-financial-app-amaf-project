@@ -9,7 +9,7 @@ export const GainerComparison = props => {
 	const [comparisons, setComparisons] = useState([]);
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/financial-growth/${symbol}?limit=20&apikey=da6240539dc1685ff601c5c2edb3ff29`, {
+		fetch(fmp_url + `api/v3/financial-growth/${symbol}?limit=1&apikey=da6240539dc1685ff601c5c2edb3ff29`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"

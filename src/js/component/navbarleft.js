@@ -27,7 +27,9 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
-							<a>Profile</a>
+							<NavLink to="/profile" activeClassName="is-active">
+								Profile
+							</NavLink>
 						</li>
 					</ul>
 					<p className="menu-label">Stock Market</p>
