@@ -9,7 +9,7 @@ export const GainerComparison = props => {
 	const [comparisons, setComparisons] = useState([]);
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/financial-growth/${symbol}?limit=1&apikey=da6240539dc1685ff601c5c2edb3ff29`, {
+		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=da6240539dc1685ff601c5c2edb3ff29`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -60,11 +60,14 @@ export const GainerComparison = props => {
 								<thead className="thead-dark">
 									<tr>
 										<th scope="col">Symbol</th>
-										<th scope="col">Ticker</th>
-										<th scope="col">Changes</th>
+										<th scope="col">Name</th>
 										<th scope="col">Price</th>
-										<th scope="col">Changes %</th>
-										<th scope="col">Company</th>
+										<th scope="col">Change</th>
+										<th scope="col">Day Low</th>
+										<th scope="col">Day High</th>
+										<th scope="col">Year Low</th>
+										<th scope="col">Year High</th>
+										<th scope="col">Avg 50</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -73,11 +76,14 @@ export const GainerComparison = props => {
 												return (
 													<tr key={index}>
 														<td>{value.symbol}</td>
-														<td>{value.revenueGrowth}</td>
-														<td>{value.grossProfitGrowth}</td>
+														<td>{value.name}</td>
 														<td>{value.price}</td>
-														<td>{value.changesPercentage}</td>
-														<td>{value.companyName}</td>
+														<td>{value.changesPercentage}%</td>
+														<td>{value.dayLow}</td>
+														<td>{value.dayHigh}</td>
+														<td>{value.yearLow}</td>
+														<td>{value.yearHigh}</td>
+														<td>{value.priceAvg50.toFixed(2)}</td>
 													</tr>
 												);
 										  })

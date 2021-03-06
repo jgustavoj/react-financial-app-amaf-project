@@ -82,6 +82,7 @@
 		"bootstrap": "^4.3.1",
 		"chartist": "^0.11.4",
 		"chartist-plugin-tooltips-updated": "^0.1.4",
+		"cool-checkboxes-for-bulma.io": "^1.1.0",
 		"frappe-charts": "^1.5.6",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",

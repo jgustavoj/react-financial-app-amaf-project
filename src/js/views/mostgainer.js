@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const MostGainer = () => {
@@ -76,6 +77,9 @@ export const MostGainer = () => {
 														return (
 															<tr key={index}>
 																<td>
+																	<div className="pretty p-icon p-jelly">
+																		<input type="checkbox" />
+																	</div>
 																	<input
 																		type="checkbox"
 																		aria-label=""
@@ -86,7 +90,7 @@ export const MostGainer = () => {
 																		}
 																	/>
 																</td>
-																<th scope="row">{value.ticker}</th>
+																<td>{value.ticker}</td>
 																<td>{value.changes}</td>
 																<td>{value.price}</td>
 																<td>{value.changesPercentage}</td>
