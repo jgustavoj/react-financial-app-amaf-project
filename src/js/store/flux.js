@@ -1,7 +1,19 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	const base_url = "https://3000-yellow-falcon-5npkauxw.ws-us03.gitpod.io/";
+	const base_url = "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/";
 	return {
 		store: {
+			user: {
+				loggedIn: false,
+				username: "",
+				token: null,
+				info: null
+			},
+			alert: {
+				visible: false,
+				message: "",
+				type: ""
+			},
+			subscribed: false,
 			register: {
 				full_name: "",
 				email: "",
