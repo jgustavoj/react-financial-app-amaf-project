@@ -26,7 +26,7 @@ export const Profile = () => {
 										<p className="has-text-grey-dark">Charlie</p>
 										<p className="has-text-grey-dark-light is-size-7">CTO</p>
 									</div>
-									<button className="button is-primary ">Add</button>
+									<button className="button is-info">Add</button>
 								</div>
 							</div>
 						</div>

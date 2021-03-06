@@ -95,7 +95,7 @@ export const MostActives = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<button className="button is-warning is-small fas fa-chart-line" />
+																	<button className="button is-info is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);

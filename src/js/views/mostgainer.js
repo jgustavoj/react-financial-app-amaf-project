@@ -7,9 +7,10 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MostGainer = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
+	const [analyze, setAnalyze] = useState([]);
 
 	useEffect(() => {
-		fetch(fmp_url + "api/v3/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+		fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -93,7 +94,19 @@ export const MostGainer = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<button className="button is-active is-small fas fa-chart-line" />
+																	<Link
+																		to={{
+																			pathname: "/analysis",
+																			state: {
+																				analyze: comparisons
+																			}
+																		}}>
+																		<button
+																			type="button"
+																			className="button is-info is-small fas fa-chart-line">
+																			+
+																		</button>
+																	</Link>
 																</td>
 															</tr>
 														);

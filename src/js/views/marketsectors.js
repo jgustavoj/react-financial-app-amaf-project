@@ -87,7 +87,7 @@ export const MarketSectors = () => {
 																<td>{value.sector}</td>
 																<td>{value.changesPercentage}</td>
 																<td>
-																	<button className="button is-active is-small fas fa-chart-line" />
+																	<button className="button is-info is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);
