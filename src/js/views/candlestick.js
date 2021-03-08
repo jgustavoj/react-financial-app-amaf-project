@@ -11,12 +11,7 @@ export const CandleStick = () => {
 	const [indicators, setIndicators] = useState([]);
 
 	useEffect(() => {
-		fetch(`https://fcsapi.com/api-v3/stock/history?symbol=IBM&period=month&access_key=BVP3JRqpRDGZ8XidytzlHOWE`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
+		fetch(`https://fcsapi.com/api-v3/stock/history?symbol=IBM&period=month&access_key=BVP3JRqpRDGZ8XidytzlHOWE`)
 			.then(resp => {
 				if (!resp.ok) {
 					throw new Error(resp.statusText);
@@ -25,7 +20,7 @@ export const CandleStick = () => {
 			})
 			.then(resp => {
 				setData(resp);
-				console.log(data["code"]);
+				console.log(resp);
 				return true;
 			})
 			.catch(err => {
