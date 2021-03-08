@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+import { createChart } from "lightweight-charts";
+
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
+	const chart = createChart(document.body, { width: 400, height: 300 });
+	const lineSeries = chart.addLineSeries();
+	lineSeries.setData([
+		{ time: "2019-04-11", value: 80.01 },
+		{ time: "2019-04-12", value: 96.63 },
+		{ time: "2019-04-13", value: 76.64 },
+		{ time: "2019-04-14", value: 81.89 },
+		{ time: "2019-04-15", value: 74.43 },
+		{ time: "2019-04-16", value: 80.01 },
+		{ time: "2019-04-17", value: 96.63 },
+		{ time: "2019-04-18", value: 76.64 },
+		{ time: "2019-04-19", value: 81.89 },
+		{ time: "2019-04-20", value: 74.43 }
+	]);
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	// const {
 	// 	match: { params }
