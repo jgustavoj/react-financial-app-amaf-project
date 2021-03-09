@@ -39,7 +39,10 @@ export const Login = () => {
 									</div>
 								</div>
 								<div className="field">
-									<button className="button is-danger is-fullwidth" onClick={() => actions.login()}>
+									<button
+										type="button"
+										className="button is-danger is-fullwidth"
+										onClick={() => actions.login(email, password)}>
 										Sign in!
 									</button>
 								</div>

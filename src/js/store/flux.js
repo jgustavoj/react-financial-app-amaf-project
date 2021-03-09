@@ -4,9 +4,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			amaf_url: "",
 			hector_url: "",
 			camilla_url: "",
-			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io/",
+			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
 			fmp_url: "https://financialmodelingprep.com/",
 
+			user: {
+				loggedIn: false,
+				username: "",
+				token: null,
+				info: null
+			},
 			register: {
 				full_name: "",
 				email: "",
@@ -82,14 +88,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			login: (username, password) => {
-				return fetch(base_url + "/login", {
+			login: (email, password) => {
+				return fetch(getStore().base_url + "/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						username: username,
+						email: email,
 						password: password
 					})
 				})
@@ -103,7 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						let store = getStore();
 						store.user = {
 							loggedIn: true,
-							username: username,
+							email: email,
 							token: data.jwt,
 							info: data.user
 						};
