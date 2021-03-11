@@ -1,27 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-import { createChart } from "lightweight-charts";
+//import { createChart } from "lightweight-charts";
 
 const fmp_url = "https://financialmodelingprep.com/";
+const fcs_url = "https://fcsapi.com/";
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const chart = createChart(document.body, { width: 400, height: 300 });
-	const lineSeries = chart.addLineSeries();
-	lineSeries.setData([
-		{ time: "2019-04-11", value: 80.01 },
-		{ time: "2019-04-12", value: 96.63 },
-		{ time: "2019-04-13", value: 76.64 },
-		{ time: "2019-04-14", value: 81.89 },
-		{ time: "2019-04-15", value: 74.43 },
-		{ time: "2019-04-16", value: 80.01 },
-		{ time: "2019-04-17", value: 96.63 },
-		{ time: "2019-04-18", value: 76.64 },
-		{ time: "2019-04-19", value: 81.89 },
-		{ time: "2019-04-20", value: 74.43 }
-	]);
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	// const {
 	// 	match: { params }
@@ -29,12 +16,7 @@ export const Analysis = props => {
 	const symbol = props.match.params.tickerSymbol;
 	// add symbol details fetch for each
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
+		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
 			.then(resp => {
 				if (!resp.ok) {
 					throw new Error(resp.statusText);
@@ -42,13 +24,7 @@ export const Analysis = props => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setAnalyzeData(resp);
-				//setStore(store);
 				return true;
 			})
 			.catch(err => {
@@ -64,22 +40,12 @@ export const Analysis = props => {
 				</div>
 				<div className="column is-10-tablet">
 					<section className="section">
+						<h3 className="title is-3 pb-3 is-spaced">Analysis for {symbol}</h3>
 						<div className="container">
-							{/* <Link
-											to={{
-												pathname: "/gainerComparison",
-												state: {
-													comparisons: comparisons
-												}
-											}}>
-											<button type="button" className="btn btn-warning">
-												Compare
-											</button>
-										</Link> */}
 							<table className="table is-fullwidth">
 								<thead className="thead-dark">
 									<tr>
-										<th scope="col">Symbol</th>
+										<th scope="col">Company</th>
 										<th scope="col">Price</th>
 										<th scope="col">Final Div</th>
 										<th scope="col">Exchange</th>
@@ -95,7 +61,7 @@ export const Analysis = props => {
 										? analyzedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>{symbol}</td>
+														<td>{value.companyName}</td>
 														<td>${value.price === null ? "N/A" : value.price}</td>
 														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
@@ -112,6 +78,18 @@ export const Analysis = props => {
 												);
 										  })
 										: "Loading..."}
+									<br />
+									<div className="pt-4">
+										<h5 className="title is-5">Technical Indicators</h5>
+										<iframe
+											width="150%"
+											frameBorder="0"
+											height="150%"
+											src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
+											title={`${symbol} Data by Finnhub Stock API`}
+										/>
+										{/* style="border: 1px solid #e0e3eb;" */}
+									</div>
 								</tbody>
 							</table>
 						</div>
