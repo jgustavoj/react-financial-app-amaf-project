@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-//import { createChart } from "lightweight-charts";
+const get = require("simple-get");
 
 const fmp_url = "https://financialmodelingprep.com/";
 const fcs_url = "https://fcsapi.com/";
@@ -10,6 +10,11 @@ export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
+	get.concat("http://example.com", function(err, res, data) {
+		if (err) throw err;
+		console.log(res.statusCode); // 200
+		console.log(data); // Buffer('this is the server response')
+	});
 	// const {
 	// 	match: { params }
 	// } = this.props;
