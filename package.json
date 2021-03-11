@@ -80,6 +80,7 @@
 		"@djthoms/pretty-checkbox": "^3.1.0",
 		"apexcharts": "^3.25.0",
 		"axios": "^0.21.1",
+		"bent": "^7.3.12",
 		"bootstrap": "^4.3.1",
 		"chartist": "^0.11.4",
 		"chartist-plugin-tooltips-updated": "^0.1.4",
