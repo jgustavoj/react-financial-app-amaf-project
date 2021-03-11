@@ -79,12 +79,13 @@ export const Analysis = props => {
 										  })
 										: "Loading..."}
 									<br />
-									<div className="pt-4">
+									<div className="pt-4 is-mobile">
 										<h5 className="title is-5">Technical Indicators</h5>
 										<iframe
-											width="150%"
+											className="is-full"
+											width="100%"
 											frameBorder="0"
-											height="150%"
+											height="50%"
 											src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
 											title={`${symbol} Data by Finnhub Stock API`}
 										/>
