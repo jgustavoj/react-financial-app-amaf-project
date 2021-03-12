@@ -20,6 +20,7 @@ import { MostActives } from "./views/mostactives";
 import { Analysis } from "./views/analysis";
 import { MarketSectors } from "./views/marketsectors";
 import { GainerComparison } from "./views/gainercomparison";
+import { top5Stocks2021 } from "./views/top5stocks2021";
 
 //create your first component
 const Layout = () => {
@@ -42,6 +43,7 @@ const Layout = () => {
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/mostgainer" component={MostGainer} />
 						<Route exact path="/mostloser" component={MostLoser} />
+						<Route exact path="/top5stocks2021" component={top5Stocks2021} />
 						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/analysis" component={Analysis} />

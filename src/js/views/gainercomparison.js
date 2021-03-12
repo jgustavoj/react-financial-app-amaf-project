@@ -4,18 +4,24 @@ import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const GainerComparison = props => {
-	const [quotedata, setQuoteData] = useState([]);
-	const symbol = props.location.state.comparisons[0];
 	const apikey = "262c745fe3c5212a43505988b53267ad";
-	const [comparisons, setComparisons] = useState([]);
-	// add symbol details fetch for each
+	const [quotedata, setQuoteData] = useState([]);
+
+	const getSymbols = props.location.state.comparisons;
+	const symbol = props.location.state.comparisons[0];
+	var counter = 0;
+
+	props.location.state.comparisons.forEach(index => {
+		symbol[counter] = props.location.state.comparisons[index];
+		console.log(symbol[counter]); // map instead
+		counter++;
+	});
+
+	function getStockData() {}
+
 	useEffect(() => {
-		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=${apikey}`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
+		// map inside for each fetch > symbol
+		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=${apikey}`)
 			.then(resp => {
 				if (!resp.ok) {
 					throw new Error(resp.statusText);
@@ -23,13 +29,8 @@ export const GainerComparison = props => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setQuoteData(resp);
-				//setStore(store);
+				// { "symbol":
 				return true;
 			})
 			.catch(err => {
@@ -46,17 +47,6 @@ export const GainerComparison = props => {
 				<div className="column is-10-tablet">
 					<section className="section">
 						<div className="container">
-							{/* <Link
-											to={{
-												pathname: "/gainerComparison",
-												state: {
-													comparisons: comparisons
-												}
-											}}>
-											<button type="button" className="btn btn-warning">
-												Compare
-											</button>
-										</Link> */}
 							<table className="table is-fullwidth">
 								<thead className="thead-dark">
 									<tr>

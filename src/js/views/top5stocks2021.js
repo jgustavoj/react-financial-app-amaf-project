@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-import { Spin, Space } from "antd";
 
 const fmp_url = "https://financialmodelingprep.com/";
 
-export const MostGainer = () => {
+export const top5Stocks2021 = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const [analyze, setAnalyze] = useState([]);
@@ -30,7 +29,7 @@ export const MostGainer = () => {
 				// 	token: data.jwt,
 				// 	info: data.user
 				// };
-				setData(resp.mostGainerStock);
+				setData(resp.top5stocks2021);
 				//setStore(store);
 				return true;
 			})
