@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import Charlie from "../../img/charlie.jpg";
-import Toggle from "react-toggle";
-import { GiReceiveMoney } from "react-icons/go";
+// import Toggle from "react-toggle";
+// import { GiReceiveMoney } from "react-icons/go";
 
 export const Profile = () => {
 	return (

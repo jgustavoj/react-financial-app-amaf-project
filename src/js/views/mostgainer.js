@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-import { Spin, Space } from "antd";
+// import { Spin, Space } from "antd";
 
 const fmp_url = "https://financialmodelingprep.com/";
 
