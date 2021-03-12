@@ -10,20 +10,41 @@ export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
+	const symbol = props.match.params.tickerSymbol;
 
-	const show = async () => {
-		const url = "https://financialmodelingprep.com/api/v3/stock/actives";
-		const params = { apikey: "262c745fe3c5212a43505988b53267ad" };
-		const data = await fetchJson.get(url, params);
-		setComparisons(data.url);
-		console.log(data);
-	};
-	show();
+	fetch("https://fear-and-greed-index.p.rapidapi.com/v1/fgi", {
+		method: "GET",
+		headers: {
+			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
+			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
+		}
+	})
+		.then(response => {
+			console.log(response);
+		})
+		.catch(err => {
+			console.error(err);
+		});
+
+	// const show = async () => {
+	// 	const url = `https://fear-and-greed-index.p.rapidapi.com/v1/${symbol}`;
+	// 	const options = {
+	// 		headers: {
+	// 			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
+	// 			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
+	// 		}
+	// 	};
+
+	// 	const data = await fetchJson.get(url, "", options);
+	// 	setComparisons(data.url);
+	// 	console.log(data);
+	// };
+	// show();
 
 	// const {
 	// 	match: { params }
 	// } = this.props;
-	const symbol = props.match.params.tickerSymbol;
+
 	// add symbol details fetch for each
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
