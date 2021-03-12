@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-import { createChart } from "lightweight-charts";
+// import { createChart } from "lightweight-charts";
 
 const fmp_url = "https://financialmodelingprep.com/";
 

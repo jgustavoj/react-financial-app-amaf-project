@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Signup = () => {
+export const Signup = props => {
 	const { store, actions } = useContext(Context);
-	const { full_name, setFull_name } = useState("");
+	const [full_name, setFullName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -18,24 +18,51 @@ export const Signup = () => {
 							<form>
 								<div className="field">
 									<div className="control">
-										<input className="input" type="text" placeholder="Name" />
+										<input
+											className="input"
+											type="text"
+											placeholder="Name"
+											value={full_name}
+											onChange={e => setFullName(e.target.value)}
+										/>
+									</div>
+									<div className="field">
+										<div className="control">
+											<input
+												className="input"
+												type="text"
+												placeholder="Email"
+												value={email}
+												onChange={e => setEmail(e.target.value)}
+											/>
+										</div>
+									</div>
+									<div className="field">
+										<div className="control">
+											<input
+												className="input"
+												type="password"
+												placeholder="Password"
+												value={password}
+												onChange={e => setPassword(e.target.value)}
+											/>
+										</div>
 									</div>
 								</div>
-								<div className="field">
-									<div className="control">
-										<input className="input" type="email" placeholder="Email" />
-									</div>
-								</div>
-								<div className="field">
+								{/* {/* <div className="field">
 									<div className="control">
 										<input className="input" type="password" placeholder="Password" />
-									</div>
-								</div>
+									</div> 
+								</div> */}
 								<div className="field">
 									<div className="control">
 										<button
+											type="button"
 											className="button is-danger is-fullwidth"
-											onClick={() => actions.signupPage()}>
+											onClick={() => {
+												actions.signupPage(full_name, email, password);
+												props.history.push("/login");
+											}}>
 											Sign up!
 										</button>
 									</div>

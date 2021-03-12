@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import ReactApexChart from "react-apexcharts";
-import useFetch from "react-fetch-hook";
+// import useFetch from "react-fetch-hook";
 
 export const CandleStick = () => {
 	// export function CandleStick() {

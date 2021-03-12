@@ -75,12 +75,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return resp.json();
 					})
 					.then(data => {
-						let store = getStore();
-						// store.user = {
+						// let store = getStore();
+						//  store.user = {
 						// 	token: data.jwt,
 						// 	info: data.user
 						// };
-						setStore(store);
+						// setStore(store);
 						return true;
 					})
 					.catch(err => {
