@@ -40,7 +40,7 @@ export const Portfolio = () => {
 										/>
 									</div>
 								</div>
-                                <div className="field">
+								<div className="field">
 									<div className="control">
 										<input
 											className="input"
@@ -51,7 +51,7 @@ export const Portfolio = () => {
 										/>
 									</div>
 								</div>
-                                <div className="field">
+								<div className="field">
 									<div className="control">
 										<input
 											className="input"
@@ -62,7 +62,7 @@ export const Portfolio = () => {
 										/>
 									</div>
 								</div>
-                                <div className="field">
+								<div className="field">
 									<div className="control">
 										<input
 											className="input"
@@ -77,7 +77,15 @@ export const Portfolio = () => {
 									<button
 										type="button"
 										className="button is-danger is-fullwidth"
-										onClick={() => actions.porfolio(question_1, question_2, question_3, question_4, question_5)}>
+										onClick={() =>
+											actions.portfolio(
+												question_1,
+												question_2,
+												question_3,
+												question_4,
+												question_5
+											)
+										}>
 										Submit!
 									</button>
 								</div>
