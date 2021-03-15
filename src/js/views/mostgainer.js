@@ -100,9 +100,8 @@ export const MostGainer = () => {
 																	<Link to={`/buy/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-chart-line">
-																			+
-																		</button>
+																			className="button is-info is-small fas fa-money-bill-wave"
+																		/>
 																	</Link>
 																</td>
 																<td>
