@@ -48,12 +48,11 @@ const Layout = () => {
 						<Route exact path="/top5stocks2021" component={top5Stocks2021} />
 						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
-						<Route exact path="/analysis" component={Analysis} />
-						<Route exact path="/buy" component={Analysis} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
+						<Route path="/buy/:tickerSymbol" component={buy} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
