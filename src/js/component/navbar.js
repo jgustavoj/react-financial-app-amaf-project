@@ -38,6 +38,9 @@ export const Navbar = () => {
 								<a className="navbar-item navbar-item-dropdown" href="/profile">
 									Profile
 								</a>
+								<a className="navbar-item navbar-item-dropdown" href="/portfolio">
+									Portfolio
+								</a>
 							</div>
 						</div>
 					</div>
