@@ -71,6 +71,7 @@ export const MostGainer = () => {
 												<th scope="col">Price</th>
 												<th scope="col">+/- %</th>
 												<th scope="col">Company</th>
+												<th scope="col">Buy</th>
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
@@ -96,12 +97,20 @@ export const MostGainer = () => {
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
 																<td>
-																	<Link to={`/analysis/${value.ticker}`}>
+																	<Link to={`/buy/${value.ticker}`}>
 																		<button
 																			type="button"
 																			className="button is-info is-small fas fa-chart-line">
 																			+
 																		</button>
+																	</Link>
+																</td>
+																<td>
+																	<Link to={`/analysis/${value.ticker}`}>
+																		<button
+																			type="button"
+																			className="button is-info is-small fas fa-spinner fa-pulse"
+																		/>
 																	</Link>
 																</td>
 															</tr>
