@@ -108,7 +108,11 @@ export const Analysis = props => {
 										? analyzedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>{value.companyName.slice(0, 35) + "..."}</td>
+														<td>
+															{value.companyName.length > 35
+																? value.companyName.slice(0, 35) + "..."
+																: value.companyName}
+														</td>
 														<td>${value.price === null ? "N/A" : value.price}</td>
 														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
