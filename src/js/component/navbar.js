@@ -23,12 +23,7 @@ export const Navbar = () => {
 						<a className="navbar-item" href="/">
 							Home
 						</a>
-						<a className="navbar-item" href="/investments">
-							Investments
-						</a>
-						<a className="navbar-item" href="/forecast">
-							Forecast
-						</a>
+
 						<div className="navbar-item has-dropdown is-hoverable">
 							<a className="navbar-link">Menu</a>
 							<div className="navbar-dropdown">
