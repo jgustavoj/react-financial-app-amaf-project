@@ -78,7 +78,9 @@ export const Buy = props => {
 																? value.companyName.slice(0, 35) + "..."
 																: value.companyName}
 														</td>
-														<td>${value.price === null ? "N/A" : value.price}</td>
+														<td>
+															${value.price === null ? "N/A" : value.price.toFixed(2)}
+														</td>
 														<td>
 															<div className="field has-addons is-small">
 																<p className="control is-small">

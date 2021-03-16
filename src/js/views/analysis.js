@@ -113,7 +113,9 @@ export const Analysis = props => {
 																? value.companyName.slice(0, 35) + "..."
 																: value.companyName}
 														</td>
-														<td>${value.price === null ? "N/A" : value.price}</td>
+														<td>
+															${value.price === null ? "N/A" : value.price.toFixed(2)}
+														</td>
 														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
 															{value.exchangeShortName === ""
