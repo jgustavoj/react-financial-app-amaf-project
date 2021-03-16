@@ -126,17 +126,22 @@ export const Buy = props => {
 										  })
 										: "Loading..."}
 									<br />
-									<div className="pt-4 is-10-tablet">
-										<h5 className="title is-5">Technical Indicators</h5>
-										<iframe
-											className="is-full"
-											width="100%"
-											frameBorder="0"
-											height="100%"
-											src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
-											title={`${symbol} Data by Finnhub Stock API`}
-										/>
-										{/* style="border: 1px solid #e0e3eb;" */}
+									<div className="field has-addons">
+										<p className="control">
+											<span className="select">
+												<select>
+													<option>$</option>
+													<option>£</option>
+													<option>€</option>
+												</select>
+											</span>
+										</p>
+										<p className="control">
+											<input className="input" type="text" placeholder="Amount of money" />
+										</p>
+										<p className="control">
+											<a className="button">Transfer</a>
+										</p>
 									</div>
 								</tbody>
 							</table>
