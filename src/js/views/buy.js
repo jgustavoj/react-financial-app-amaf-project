@@ -9,43 +9,11 @@ const fcs_url = "https://fcsapi.com/";
 export const Buy = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
+	const [stockprice, setStockPrice] = useState("0");
+	const [comparePrice, setComparePrice] = useState("0");
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
-	fetch("https://fear-and-greed-index.p.rapidapi.com/v1/fgi", {
-		method: "GET",
-		headers: {
-			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
-		}
-	})
-		.then(response => {
-			console.log(response);
-		})
-		.catch(err => {
-			console.error(err);
-		});
-
-	// const show = async () => {
-	// 	const url = `https://fear-and-greed-index.p.rapidapi.com/v1/${symbol}`;
-	// 	const options = {
-	// 		headers: {
-	// 			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-	// 			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
-	// 		}
-	// 	};
-
-	// 	const data = await fetchJson.get(url, "", options);
-	// 	setComparisons(data.url);
-	// 	console.log(data);
-	// };
-	// show();
-
-	// const {
-	// 	match: { params }
-	// } = this.props;
-
-	// add symbol details fetch for each
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
 			.then(resp => {
@@ -56,6 +24,7 @@ export const Buy = props => {
 			})
 			.then(resp => {
 				setAnalyzeData(resp);
+				setComparePrice(resp[0].price);
 				return true;
 			})
 			.catch(err => {
@@ -64,21 +33,10 @@ export const Buy = props => {
 			});
 	}, []);
 
-	const twitterSentiment = () => {
-		fetch(`https://financial-twitter-sentiment.p.rapidapi.com/api/fin-twitter/stocks/sentiment?stocks=${symbol}`, {
-			method: "GET",
-			headers: {
-				"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-				"x-rapidapi-host": "financial-twitter-sentiment.p.rapidapi.com"
-			}
-		})
-			.then(response => {
-				console.log(response);
-			})
-			.catch(err => {
-				console.error(err);
-			});
-	};
+	function handlePriceChange(e) {
+		setStockPrice((comparePrice * e.target.value).toFixed(2));
+	}
+
 	return (
 		<>
 			<div className="columns is-multiline">
@@ -93,14 +51,9 @@ export const Buy = props => {
 								<thead className="thead-dark">
 									<tr>
 										<th scope="col">Company</th>
-										<th scope="col">Price</th>
-										<th scope="col">Final Div</th>
-										<th scope="col">Exchange</th>
-										<th scope="col">Range</th>
-										<th scope="col">Beta</th>
-										<th scope="col">Changes</th>
-										<th scope="col">Currency</th>
-										<th scope="col">Address</th>
+										<th scope="col">Current Price</th>
+										<th scope="col">Buy</th>
+										<th scope="col">Total Purchase</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -110,39 +63,36 @@ export const Buy = props => {
 													<tr key={index}>
 														<td>{value.companyName}</td>
 														<td>${value.price === null ? "N/A" : value.price}</td>
-														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
-															{value.exchangeShortName === ""
-																? "N/A"
-																: value.exchangeShortName}
+															<div className="field has-addons is-small">
+																<p className="control is-small">
+																	<span className="select is-small">
+																		<select>
+																			<option>$</option>
+																			<option>£</option>
+																			<option>€</option>
+																		</select>
+																	</span>
+																</p>
+																<p className="control is-small">
+																	<input
+																		className="input is-small"
+																		type="text"
+																		placeholder="Amount of shares"
+																		onChange={handlePriceChange}
+																	/>
+																</p>
+																<p className="control is-small">
+																	<a className="button is-small">Purchase</a>
+																</p>
+															</div>
 														</td>
-														<td>{value.range === null ? "N/A" : value.range}</td>
-														<td>{value.beta === null ? "N/A" : value.beta}</td>
-														<td>{value.changes === null ? "N/A" : value.changes}</td>
-														<td>{value.currency === null ? "N/A" : value.currency}</td>
-														<td>{value.address === "" ? "N/A" : value.address}</td>
+														<td>${stockprice === "0" ? "0" : stockprice}</td>
 													</tr>
 												);
 										  })
 										: "Loading..."}
 									<br />
-									<div className="field has-addons">
-										<p className="control">
-											<span className="select">
-												<select>
-													<option>$</option>
-													<option>£</option>
-													<option>€</option>
-												</select>
-											</span>
-										</p>
-										<p className="control">
-											<input className="input" type="text" placeholder="Amount of money" />
-										</p>
-										<p className="control">
-											<a className="button">Transfer</a>
-										</p>
-									</div>
 								</tbody>
 							</table>
 						</div>
