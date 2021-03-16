@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+//import { Collapsibles } from "../component/collapsibles";
 
 export const Dashboard = () => {
 	return (
@@ -32,7 +33,7 @@ export const Dashboard = () => {
 												<tr>
 													<td className="is-chevron-cell">
 														<a role="button">
-															<span className="icon is-expanded">
+															<span className="icon">
 																<i className="mdi mdi-chevron-right mdi-24px" />
 															</span>
 														</a>

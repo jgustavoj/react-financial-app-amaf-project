@@ -18,6 +18,7 @@ import { MostGainer } from "./views/mostgainer";
 import { MostLoser } from "./views/mostloser";
 import { MostActives } from "./views/mostactives";
 import { Analysis } from "./views/analysis";
+import { StockLookup } from "./views/stocklookup";
 import { Buy } from "./views/buy";
 import { MarketSectors } from "./views/marketsectors";
 import { GainerComparison } from "./views/gainercomparison";
@@ -50,6 +51,7 @@ const Layout = () => {
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
+						<Route exact path="/stocklookup" component={StockLookup} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
 						<Route path="/buy/:tickerSymbol" component={Buy} />

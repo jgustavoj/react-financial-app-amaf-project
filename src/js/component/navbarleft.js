@@ -40,6 +40,11 @@ export const NavbarLeft = () => {
 					<p className="menu-label">Stock Research</p>
 					<ul className="menu-list">
 						<li>
+							<NavLink to="/stocklookup" activeClassName="is-active">
+								Stock Lookup
+							</NavLink>
+						</li>
+						<li>
 							<NavLink to="/mostgainer" activeClassName="is-active">
 								Most Gainer
 							</NavLink>
