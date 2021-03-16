@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-// import "fetch-json";
 
 const fmp_url = "https://financialmodelingprep.com/";
 const fcs_url = "https://fcsapi.com/";
+const finn_token = "c0vsqsv48v6t383lq1kg";
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
@@ -12,34 +12,6 @@ export const Analysis = props => {
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
-	fetch("https://fear-and-greed-index.p.rapidapi.com/v1/fgi")
-		.then(response => {
-			console.log(response);
-		})
-		.catch(err => {
-			console.error(err);
-		});
-
-	// const show = async () => {
-	// 	const url = `https://fear-and-greed-index.p.rapidapi.com/v1/${symbol}`;
-	// 	const options = {
-	// 		headers: {
-	// 			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-	// 			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
-	// 		}
-	// 	};
-
-	// 	const data = await fetchJson.get(url, "", options);
-	// 	setComparisons(data.url);
-	// 	console.log(data);
-	// };
-	// show();
-
-	// const {
-	// 	match: { params }
-	// } = this.props;
-
-	// add symbol details fetch for each
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
 			.then(resp => {
@@ -58,21 +30,6 @@ export const Analysis = props => {
 			});
 	}, []);
 
-	const twitterSentiment = () => {
-		fetch(`https://financial-twitter-sentiment.p.rapidapi.com/api/fin-twitter/stocks/sentiment?stocks=${symbol}`, {
-			method: "GET",
-			headers: {
-				"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-				"x-rapidapi-host": "financial-twitter-sentiment.p.rapidapi.com"
-			}
-		})
-			.then(response => {
-				console.log(response);
-			})
-			.catch(err => {
-				console.error(err);
-			});
-	};
 	return (
 		<>
 			<div className="columns is-multiline">

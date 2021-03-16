@@ -23,13 +23,7 @@ export const MarketSectors = () => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setData(resp);
-				//setStore(store);
 				return true;
 			})
 			.catch(err => {
