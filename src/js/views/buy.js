@@ -73,7 +73,7 @@ export const Buy = props => {
 										? analyzedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>{value.companyName.slice(0, 25) + "..."}</td>
+														<td>{value.companyName.slice(0, 35) + "..."}</td>
 														<td>${value.price === null ? "N/A" : value.price}</td>
 														<td>
 															<div className="field has-addons is-small">
