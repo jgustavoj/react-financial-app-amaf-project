@@ -7,21 +7,28 @@ const axios = require("axios");
 export const StockLookup = () => {
 	const [stockfind, setStockFind] = useState();
 	const [results, setResults] = useState(false);
+	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
 	const finn_token = "c0vsqsv48v6t383lq1kg";
 
 	function BuyStock() {
-		return (
-			<p className="control is-medium">
-				<Link to={`/buy/${stocksymbol}`}>
-					<button className="button is-medium is-primary" type="button">
-						<span className="icon">
-							<i className="fas fa-money-bill-wave" />
-						</span>
-					</button>
-				</Link>
-			</p>
-		);
+		if (!hideBuy) {
+			sethideBuy(false);
+			return (
+				<p className="control is-medium">
+					<Link to={`/buy/${stocksymbol}`}>
+						<button className="button is-medium is-info" type="button">
+							<span className="icon">
+								<i className="fas fa-money-bill-wave" />
+							</span>
+						</button>
+					</Link>
+				</p>
+			);
+		} else {
+			sethideBuy(true);
+			return "";
+		}
 	}
 
 	function Lookup() {
@@ -38,7 +45,9 @@ export const StockLookup = () => {
 			return (
 				<div className="box">
 					<div className="list">
-						<h5 className="title is-5 pb-3 is-spaced has-text-danger">Results</h5>
+						<h4 className="title is-4 pb-3 is-spaced has-text-danger has-text-centered">
+							Basic Financials
+						</h4>
 						<br />
 						<ul>
 							{rows.map((stockoutput, index) => (
@@ -51,6 +60,7 @@ export const StockLookup = () => {
 				</div>
 			);
 		} else {
+			sethideBuy(true);
 			return (
 				<div className="box">
 					<div className="list">
@@ -61,6 +71,12 @@ export const StockLookup = () => {
 		}
 	}
 
+	function clearStockLookup() {
+		document.getElementById("inputStock").value = "";
+		sethideBuy(true);
+		setResults(false);
+	}
+
 	function handleStockLookup(e) {
 		if (stocksymbol != "") {
 			axios
@@ -68,6 +84,7 @@ export const StockLookup = () => {
 				.then(function(response) {
 					setStockFind(response.data);
 					setResults(true);
+					sethideBuy(false);
 				})
 				.catch(function(error) {
 					console.log(error);
@@ -76,6 +93,7 @@ export const StockLookup = () => {
 					// always executed
 				});
 		} else {
+			sethideBuy(true);
 			setResults(false);
 		}
 	}
@@ -96,6 +114,7 @@ export const StockLookup = () => {
 											<div className="field has-addons is-medium">
 												<p className="control is-medium">
 													<input
+														id="inputStock"
 														className="input is-medium"
 														type="text"
 														placeholder="Stock symbol"
@@ -109,6 +128,16 @@ export const StockLookup = () => {
 														onClick={handleStockLookup}>
 														<span className="icon">
 															<i className="fas fa-search" />
+														</span>
+													</button>
+												</p>
+												<p className="control is-medium">
+													<button
+														className="button is-medium is-warning"
+														type="button"
+														onClick={clearStockLookup}>
+														<span className="icon">
+															<i className="fas fa-trash-alt" />
 														</span>
 													</button>
 												</p>

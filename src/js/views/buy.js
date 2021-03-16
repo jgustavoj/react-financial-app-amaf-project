@@ -100,7 +100,7 @@ export const Buy = props => {
 																</p>
 																<p className="control is-small">
 																	<a
-																		className="button is-small"
+																		className="button is-small is-info"
 																		onClick={() => {
 																			this.showModal();
 																		}}>
