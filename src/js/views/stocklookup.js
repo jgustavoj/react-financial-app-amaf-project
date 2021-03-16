@@ -2,22 +2,40 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
+const axios = require("axios");
+
 export const StockLookup = () => {
-	const [data, setData] = useState([]);
-	const [stockfind, setStockFind] = useState({});
+	const [stockfind, setStockFind] = useState();
+	const [results, setResults] = useState(false);
 	const [stocksymbol, setStockSymbol] = useState("");
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const finn_token = "c0vsqsv48v6t383lq1kg";
+
+	function Lookup() {
+		return (
+			<div className="box">
+				<h5 className="title is-5 pb-3 is-spaced has-text-danger">Results</h5>
+				<br />
+
+				<p>{stockfind.metric.beta}</p>
+			</div>
+		);
+	}
 
 	function handleStockLookup(e) {
-		fetch(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=c0vsqsv48v6t383lq1kg`)
-			.then(response => {
-				console.log(response);
-				setStockFind(response);
-			})
-			.catch(err => {
-				console.error(err);
-			});
-		//setStockPrice((comparePrice * e.target.value).toFixed(2));
+		if (stocksymbol != "") {
+			axios
+				.get(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=${finn_token}`)
+				.then(function(response) {
+					setStockFind(response.data);
+					setResults(true);
+				})
+				.catch(function(error) {
+					console.log(error);
+				})
+				.then(function() {
+					// always executed
+				});
+		}
 	}
 	return (
 		<>
@@ -32,7 +50,7 @@ export const StockLookup = () => {
 							<div className="container pt-3 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
-										<div>
+										<div className="box">
 											<div className="field has-addons is-medium">
 												<p className="control is-medium">
 													<input
@@ -54,6 +72,7 @@ export const StockLookup = () => {
 												</p>
 											</div>
 										</div>
+										{!results ? "" : <Lookup />}
 									</table>
 								</div>
 							</div>
