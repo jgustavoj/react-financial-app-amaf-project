@@ -69,8 +69,6 @@ export const Buy = props => {
 																	<span className="select is-small">
 																		<select>
 																			<option>$</option>
-																			<option>£</option>
-																			<option>€</option>
 																		</select>
 																	</span>
 																</p>
