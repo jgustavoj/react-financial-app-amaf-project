@@ -52,7 +52,7 @@ const Layout = () => {
 						<Route exact path="/portfolio" component={Portfolio} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
-						<Route path="/buy/:tickerSymbol" component={buy} />
+						<Route path="/buy/:tickerSymbol" component={Buy} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

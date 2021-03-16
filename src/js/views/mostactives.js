@@ -71,6 +71,7 @@ export const MostActives = () => {
 												<th scope="col">Price</th>
 												<th scope="col">+/- %</th>
 												<th scope="col">Company</th>
+												<th scope="col">Buy</th>
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
@@ -95,6 +96,14 @@ export const MostActives = () => {
 																<td>{value.price}</td>
 																<td>{value.changesPercentage}</td>
 																<td>{value.companyName.slice(0, 25) + "..."}</td>
+																<td>
+																	<Link to={`/buy/${value.ticker}`}>
+																		<button
+																			type="button"
+																			className="button is-info is-small fas fa-money-bill-wave"
+																		/>
+																	</Link>
+																</td>
 																<td>
 																	<Link to={`/analysis/${value.ticker}`}>
 																		<button

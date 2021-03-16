@@ -6,7 +6,7 @@ import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 const fcs_url = "https://fcsapi.com/";
 
-export const Analysis = props => {
+export const Buy = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
