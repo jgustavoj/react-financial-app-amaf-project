@@ -17,7 +17,12 @@ export const StockLookup = () => {
 			return (
 				<p className="control is-medium">
 					<Link to={`/buy/${stocksymbol}`}>
-						<button className="button is-medium is-info" type="button">
+						<button
+							className="button is-medium is-info"
+							type="button"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Buy">
 							<span className="icon">
 								<i className="fas fa-money-bill-wave" />
 							</span>
@@ -125,6 +130,9 @@ export const StockLookup = () => {
 													<button
 														className="button is-medium is-danger"
 														type="button"
+														data-toggle="tooltip"
+														data-placement="top"
+														title="Search"
 														onClick={handleStockLookup}>
 														<span className="icon">
 															<i className="fas fa-search" />
@@ -135,6 +143,9 @@ export const StockLookup = () => {
 													<button
 														className="button is-medium is-warning"
 														type="button"
+														data-toggle="tooltip"
+														data-placement="top"
+														title="Clear"
 														onClick={clearStockLookup}>
 														<span className="icon">
 															<i className="fas fa-trash-alt" />
