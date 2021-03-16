@@ -1,12 +1,7 @@
 // import React from "react";
 // import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 
-// class Collapsibles extends React.Component {
-// 	// componentDidMount() {
-// 	// 	this.collapsibles = bulmaCollapsible.attach(".is-collapsible", {
-// 	// 		container: this.refs.collapsibles
-// 	// 	});
-
+// export const Footer = () => (
 // 		return (
 // 				<div ref="collapsibles" id="accordion_first">
 // 					<article className="message">

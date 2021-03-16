@@ -28,7 +28,49 @@ export const Profile = () => {
 										<p className="has-text-grey-dark">Charlie</p>
 										<p className="has-text-grey-dark-light is-size-7">CTO</p>
 									</div>
-									<button className="button is-info">Add</button>
+									<div className="columns pt-3 pb-4 is-rounded">
+										<div className="column">
+											<h6 className="title is-6">Investment Style</h6>
+											<div className="select is-normal">
+												<select>
+													<option selected>Select dropdown</option>
+													<option>Passive</option>
+													<option>Aggressive</option>
+													<option>Mixed</option>
+												</select>
+											</div>
+										</div>
+										<div className="column">
+											<h6 className="title is-6">Investment Style</h6>
+											<div className="select is-normal">
+												<select>
+													<option selected>Select dropdown</option>
+													<option>With options</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div className="columns pt-3 pb-4 is-rounded">
+										<div className="column">
+											<h6 className="title is-6">Investment Style</h6>
+											<div className="select is-normal">
+												<select>
+													<option selected>Select dropdown</option>
+													<option>With options</option>
+												</select>
+											</div>
+										</div>
+										<div className="column">
+											<h6 className="title is-6">Investment Style</h6>
+											<div className="select is-normal">
+												<select>
+													<option selected>Select dropdown</option>
+													<option>With options</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<button className="button is-danger">Save Profile</button>
 								</div>
 							</div>
 						</div>
