@@ -2,43 +2,23 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-// rest of your app
-
-const fmp_url = "https://financialmodelingprep.com/";
-
 export const StockLookup = () => {
 	const [data, setData] = useState([]);
-	const [comparisons, setComparisons] = useState([]);
+	const [stockfind, setStockFind] = useState({});
+	const [stocksymbol, setStockSymbol] = useState("");
 	const apikey = "262c745fe3c5212a43505988b53267ad";
 
-	useEffect(() => {
-		fetch(fmp_url + `api/v3/stock/actives?apikey=${apikey}`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
-			.then(resp => {
-				if (!resp.ok) {
-					throw new Error(resp.statusText);
-				}
-				return resp.json();
-			})
-			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
-				setData(resp.mostActiveStock);
-				//setStore(store);
-				return true;
+	function handleStockLookup(e) {
+		fetch(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=c0vsqsv48v6t383lq1kg`)
+			.then(response => {
+				console.log(response);
+				setStockFind(response);
 			})
 			.catch(err => {
 				console.error(err);
-				return false;
 			});
-	}, []);
+		//setStockPrice((comparePrice * e.target.value).toFixed(2));
+	}
 	return (
 		<>
 			<div className="columns is-multiline">
@@ -48,76 +28,32 @@ export const StockLookup = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							<Link
-								to={{
-									pathname: "/gainercomparison",
-									state: {
-										comparisons: comparisons
-									}
-								}}>
-								<button type="button" className="button is-warning">
-									Compare
-								</button>
-							</Link>
-							<br />
-							<div className="container pt-6 pr-7">
+							<h3 className="title is-3 pb-3 is-spaced">Quick Stock Lookup</h3>
+							<div className="container pt-3 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
-										<thead className="thead-dark is-fullwidth">
-											<tr>
-												<th scope="col" />
-												<th scope="col">Ticker</th>
-												<th scope="col">Changes</th>
-												<th scope="col">Price</th>
-												<th scope="col">+/- %</th>
-												<th scope="col">Company</th>
-												<th scope="col">Buy</th>
-												<th scope="col">Analysis</th>
-											</tr>
-										</thead>
-										<tbody>
-											{data
-												? data.map((value, index) => {
-														return (
-															<tr key={index}>
-																<td>
-																	<input
-																		type="checkbox"
-																		aria-label=""
-																		onClick={() =>
-																			setComparisons(
-																				comparisons.concat(value.ticker)
-																			)
-																		}
-																	/>
-																</td>
-																<td>{value.ticker}</td>
-																<td>{value.changes}</td>
-																<td>{value.price}</td>
-																<td>{value.changesPercentage}</td>
-																<td>{value.companyName.slice(0, 25) + "..."}</td>
-																<td>
-																	<Link to={`/buy/${value.ticker}`}>
-																		<button
-																			type="button"
-																			className="button is-info is-small fas fa-money-bill-wave"
-																		/>
-																	</Link>
-																</td>
-																<td>
-																	<Link to={`/analysis/${value.ticker}`}>
-																		<button
-																			type="button"
-																			className="button is-info is-small fas fa-chart-line">
-																			+
-																		</button>
-																	</Link>
-																</td>
-															</tr>
-														);
-												  })
-												: "Loading..."}
-										</tbody>
+										<div>
+											<div className="field has-addons is-medium">
+												<p className="control is-medium">
+													<input
+														className="input is-medium"
+														type="text"
+														placeholder="Stock symbol"
+														onChange={e => setStockSymbol(e.target.value)}
+													/>
+												</p>
+												<p className="control is-medium">
+													<button
+														className="button is-medium is-danger"
+														type="button"
+														onClick={handleStockLookup}>
+														<span className="icon">
+															<i className="fas fa-search" />
+														</span>
+													</button>
+												</p>
+											</div>
+										</div>
 									</table>
 								</div>
 							</div>

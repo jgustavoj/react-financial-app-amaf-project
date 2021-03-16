@@ -12,13 +12,7 @@ export const Analysis = props => {
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
-	fetch("https://fear-and-greed-index.p.rapidapi.com/v1/fgi", {
-		method: "GET",
-		headers: {
-			"x-rapidapi-key": "551ca65e98msh1d7d3cb05563a11p15137bjsn0d06cf26fc37",
-			"x-rapidapi-host": "fear-and-greed-index.p.rapidapi.com"
-		}
-	})
+	fetch("https://fear-and-greed-index.p.rapidapi.com/v1/fgi")
 		.then(response => {
 			console.log(response);
 		})
