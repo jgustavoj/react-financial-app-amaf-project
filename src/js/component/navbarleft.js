@@ -31,8 +31,13 @@ export const NavbarLeft = () => {
 								Profile
 							</NavLink>
 						</li>
+						<li>
+							<NavLink to="/portfolio" activeClassName="is-active">
+								Portfolio
+							</NavLink>
+						</li>
 					</ul>
-					<p className="menu-label">Stock Market</p>
+					<p className="menu-label">Stock Research</p>
 					<ul className="menu-list">
 						<li>
 							<NavLink to="/mostgainer" activeClassName="is-active">
