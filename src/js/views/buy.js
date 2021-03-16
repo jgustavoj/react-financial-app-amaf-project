@@ -14,6 +14,18 @@ export const Buy = props => {
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
+	// showModal = () => {
+	// 	this.setState({
+	// 		show: true
+	// 	});
+	// };
+
+	// closeModal = () => {
+	// 	this.setState({
+	// 		show: false
+	// 	});
+	// };
+
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
 			.then(resp => {
@@ -61,7 +73,7 @@ export const Buy = props => {
 										? analyzedata.map((value, index) => {
 												return (
 													<tr key={index}>
-														<td>{value.companyName}</td>
+														<td>{value.companyName.slice(0, 25) + "..."}</td>
 														<td>${value.price === null ? "N/A" : value.price}</td>
 														<td>
 															<div className="field has-addons is-small">
@@ -81,7 +93,13 @@ export const Buy = props => {
 																	/>
 																</p>
 																<p className="control is-small">
-																	<a className="button is-small">Purchase</a>
+																	<a
+																		className="button is-small"
+																		onClick={() => {
+																			this.showModal();
+																		}}>
+																		Purchase
+																	</a>
 																</p>
 															</div>
 														</td>
