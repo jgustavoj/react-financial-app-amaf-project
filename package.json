@@ -89,6 +89,7 @@
 		"axios": "^0.21.1",
 		"bent": "^7.3.12",
 		"bootstrap": "^4.3.1",
+		"bulma-responsive-tables": "^1.2.3",
 		"chartist": "^0.11.4",
 		"chartist-plugin-tooltips-updated": "^0.1.4",
 		"cool-checkboxes-for-bulma.io": "^1.1.0",
