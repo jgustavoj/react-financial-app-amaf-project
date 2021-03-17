@@ -12,6 +12,7 @@ import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
 import { AggIndicator } from "./component/agg_indictator";
+import { MarketNews } from "./component/marketnews";
 
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
@@ -52,6 +53,7 @@ const Layout = () => {
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
+						<Route exact path="/marketnews" component={MarketNews} />
 						<Route exact path="/stocklookup" component={StockLookup} />
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
