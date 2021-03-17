@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-// import { Spin, Space } from "antd";
 
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const MostGainer = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const [analyze, setAnalyze] = useState([]);
 	const apikey = "262c745fe3c5212a43505988b53267ad";
 
 	useEffect(() => {
@@ -25,13 +23,7 @@ export const MostGainer = () => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setData(resp.mostGainerStock);
-				//setStore(store);
 				return true;
 			})
 			.catch(err => {

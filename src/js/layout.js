@@ -11,6 +11,7 @@ import { Profile } from "./views/profile";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
+import { AggIndicator } from "./component/agg_indictator";
 
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
@@ -55,6 +56,9 @@ const Layout = () => {
 						{/* <Route exact path="/single/:theid" component={Single} /> */}
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
 						<Route path="/buy/:tickerSymbol" component={Buy} />
+						<Route exact path="/agg_indicator">
+							<AggIndicator />
+						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
