@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import AggIndicator from "../component/agg_indictator";
+import PropTypes from "prop-types";
 
 const fmp_url = "https://financialmodelingprep.com/";
 const fcs_url = "https://fcsapi.com/";
