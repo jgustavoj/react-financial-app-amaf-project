@@ -112,3 +112,6 @@ export const Analysis = props => {
 		</>
 	);
 };
+Analysis.propTypes = {
+	match: PropTypes.object
+};

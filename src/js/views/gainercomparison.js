@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+import PropTypes from "prop-types";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const GainerComparison = props => {
@@ -87,4 +88,7 @@ export const GainerComparison = props => {
 			</div>
 		</>
 	);
+};
+GainerComparison.propTypes = {
+	location: PropTypes.object
 };
