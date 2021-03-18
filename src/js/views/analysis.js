@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-import AggIndicator from "../component/agg_indictator";
+import { AggIndicator } from "../component/aggindicator";
 import PropTypes from "prop-types";
 
 const fmp_url = "https://financialmodelingprep.com/";
@@ -87,7 +88,7 @@ export const Analysis = props => {
 									<br />
 									<div className="pt-4 is-10-tablet">
 										<h5 className="title is-5">Aggregate Indicators</h5>
-										{/* <AggIndicator name={props.match.params.tickerSymbol} /> */}
+										<AggIndicator name={props.match.params.tickerSymbol} />
 
 										{/* style="border: 1px solid #e0e3eb;" */}
 									</div>

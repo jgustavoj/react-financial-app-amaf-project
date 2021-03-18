@@ -6,7 +6,7 @@ import InvestLogo from "../../img/InvestLogo.png";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar is-light pt-3 pb-3">
+		<nav className="navbar is-dark pt-3 pb-3">
 			<div className="container">
 				<div className="navbar-brand is-active">
 					<a className="navbar-item" href="/">

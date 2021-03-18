@@ -1,18 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
-import InvestLogo from "../../img/InvestLogo.png";
-import axios from "axios";
-
-// const response = async function getMostActive() {
-// 	try {
-// 		const response = await axios.get(
-// 			"https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=da6240539dc1685ff601c5c2edb3ff29"
-// 		);
-// 		console.log(response);
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
+//import { BrowserRouter as NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 
 export const NavbarLeft = () => {
 	return (
