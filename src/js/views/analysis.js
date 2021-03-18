@@ -86,26 +86,39 @@ export const Analysis = props => {
 										  })
 										: "Loading..."}
 									<br />
-									<div className="pt-4 is-10-tablet">
-										<h5 className="title is-5">Aggregate Indicators</h5>
-										<AggIndicator name={props.match.params.tickerSymbol} />
-
-										{/* style="border: 1px solid #e0e3eb;" */}
-									</div>
-									<div className="pt-4 is-10-tablet">
-										<h5 className="title is-5">Technical Indicators</h5>
-										<iframe
-											className="is-full"
-											width="100%"
-											frameBorder="0"
-											height="100%"
-											src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
-											title={`${symbol} Data by Finnhub Stock API`}
-										/>
-										{/* style="border: 1px solid #e0e3eb;" */}
-									</div>
 								</tbody>
 							</table>
+							<div className="pt-4 pb-2 is-10-tablet">
+								<h5 className="title is-5">Aggregate Indicators</h5>
+								<p className="pb-2">
+									Trading in the direction of a strong trend reduces risk and increases profit
+									potential. The average directional index (ADX) is used to determine when the price
+									is trending strongly. In many cases, it is the ultimate trend indicator. This is
+									examining the value of ADX as a trend strength indicator.
+								</p>
+								<AggIndicator name={props.match.params.tickerSymbol} />
+
+								{/* style="border: 1px solid #e0e3eb;" */}
+							</div>
+							<div className="pt-4 is-10-tablet">
+								<h5 className="title is-5">Technical Indicators</h5>
+								<p>
+									Chart patterns are a subjective form of technical analysis where technicians attempt
+									to identify areas of support and resistance on a chart by looking at specific
+									patterns. These patterns, underpinned by psychological factors, are designed to
+									predict where prices are headed, following a breakout or breakdown from a specific
+									price point and time.
+								</p>
+								<iframe
+									className="is-full"
+									width="100%"
+									frameBorder="0"
+									height="100%"
+									src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
+									title={`${symbol} Data by Finnhub Stock API`}
+								/>
+								{/* style="border: 1px solid #e0e3eb;" */}
+							</div>
 						</div>
 					</section>
 				</div>
