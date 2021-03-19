@@ -7,9 +7,7 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MostGainer = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = process.env.FMS_API_GLOBAL;
-
-	console.log(process.env.FMS_API_GLOBAL);
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/stock/gainers?apikey=${apikey}`, {
