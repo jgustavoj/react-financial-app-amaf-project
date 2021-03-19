@@ -3,44 +3,44 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-rou
 const finnhub = require("finnhub");
 
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "c0vsqsv48v6t383lq1kg";
+api_key.apiKey = "sandbox_c0vsqsv48v6t383lq1l0";
 const finnhubClient = new finnhub.DefaultApi();
 
 export const MarketNews = () => {
-	const [getnews, setGetNews] = useState([]);
+	const [getNews, setGetNews] = useState({});
 
 	useEffect(() => {
 		finnhubClient.generalNews("business", {}, (error, data, response) => {
 			setGetNews(data);
-			console.log(data[0]);
+			console.log(response.body);
 		});
 	}, []);
-	return (
-		<div className="columns">
-			{getnews.map((news, index) => {
-				if (index < 9) {
-					return (
-						<div className="column" key={index}>
-							<article className="media">
-								<figure className="media-left">
-									<p className="image is-64x64">
-										<img src={news.image} />
-									</p>
-								</figure>
-								<div className="media-content">
-									<div className="content">
-										<p>
-											<strong>{news.headline}</strong>
-											<br />
-											{news.summary}
-										</p>
-									</div>
-								</div>
-							</article>
+
+	function IterrateNews() {
+		// return "Hello";
+		getNews.map((news, index) => {
+			return (
+				<div className="row" key={index}>
+					<article className="media pb-2">
+						<figure className="media-left">
+							<p className="image is-32x32">
+								<img src={news.image} />
+							</p>
+						</figure>
+						<div className="media-content">
+							<div className="content">
+								<p>
+									<strong>{news.headline}</strong>
+									<br />
+									{news.summary}
+								</p>
+							</div>
 						</div>
-					);
-				}
-			})}
-		</div>
-	);
+					</article>
+				</div>
+			);
+		});
+	}
+
+	return <div className="rows">{getNews != null ? <IterrateNews /> : "Loading..."}</div>;
 };

@@ -40,7 +40,7 @@ export const StockLookup = () => {
 		var _ = require("lodash");
 		var obj = stockfind.metric;
 		var rows = [];
-		console.log(obj);
+		//console.log(obj);
 
 		if (!_.isEmpty(obj)) {
 			for (const prop in obj) {
