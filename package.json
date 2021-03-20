@@ -93,6 +93,7 @@
 		"bent": "^7.3.12",
 		"bootstrap": "^4.6.0",
 		"bulma-responsive-tables": "^1.2.3",
+		"bulmaswatch": "^0.8.1",
 		"cool-checkboxes-for-bulma.io": "^1.1.0",
 		"dotenv": "^8.2.0",
 		"fetch-json": "^2.4.4",
